@@ -1,0 +1,988 @@
+export_detections.py:25: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  config = yaml.load(f)
+[06/27/2021 08:54:09 WARNING] From /mnt/semester4/SuperPoint/superpoint/experiment.py:57: The name tf.set_random_seed is deprecated. Please use tf.compat.v1.set_random_seed instead.
+
+[06/27/2021 08:54:09 INFO] Number of GPUs detected: 1
+[06/27/2021 08:54:09 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.read_file is deprecated. Please use tf.io.read_file instead.
+
+[06/27/2021 08:54:09 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/pm.py:133: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+[06/27/2021 08:54:09 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/base_dataset.py:109: DatasetV1.make_one_shot_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_one_shot_iterator(dataset)`.
+[06/27/2021 08:54:10 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/base_dataset.py:111: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-06-27 08:54:10.766541: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-06-27 08:54:12.360629: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 08:54:12.371335: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 08:54:12.603447: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 08:54:12.709411: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 08:54:12.743114: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 08:54:13.005754: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 08:54:13.155126: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 08:54:13.627701: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 08:54:13.629115: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 08:54:13.629403: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-06-27 08:54:13.633914: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2445410000 Hz
+2021-06-27 08:54:13.634039: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5637871b1e70 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-06-27 08:54:13.634055: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-06-27 08:54:13.826090: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x56378d65ee70 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-06-27 08:54:13.826127: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA Tesla T4, Compute Capability 7.5
+2021-06-27 08:54:13.826878: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 08:54:13.826931: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 08:54:13.826943: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 08:54:13.826953: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 08:54:13.826962: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 08:54:13.826971: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 08:54:13.826980: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 08:54:13.826990: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 08:54:13.828240: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 08:54:13.828274: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 08:54:13.832363: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1180] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-06-27 08:54:13.832379: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1186]      0 
+2021-06-27 08:54:13.832385: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1199] 0:   N 
+2021-06-27 08:54:13.833714: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1325] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14259 MB memory) -> physical GPU (device: 0, name: NVIDIA Tesla T4, pci bus id: 0001:00:00.0, compute capability: 7.5)
+[06/27/2021 08:54:13 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:105: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+[06/27/2021 08:54:13 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:121: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+[06/27/2021 08:54:13 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:121: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+[06/27/2021 08:54:13 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:272: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+[06/27/2021 08:54:13 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:153: The name tf.train.replica_device_setter is deprecated. Please use tf.compat.v1.train.replica_device_setter instead.
+
+[06/27/2021 08:54:13 WARNING] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+[06/27/2021 08:54:13 INFO] Scale of 0 disables regularizer.
+[06/27/2021 08:54:13 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:10: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+[06/27/2021 08:54:13 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/layers/convolutional.py:424: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+[06/27/2021 08:54:13 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:14: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.BatchNormalization instead.  In particular, `tf.control_dependencies(tf.GraphKeys.UPDATE_OPS)` should not be used (consult the `tf.keras.layers.batch_normalization` documentation).
+[06/27/2021 08:54:13 INFO] Scale of 0 disables regularizer.
+[06/27/2021 08:54:13 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:28: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.MaxPooling2D instead.
+[06/27/2021 08:54:13 INFO] Scale of 0 disables regularizer.
+[06/27/2021 08:54:13 INFO] Scale of 0 disables regularizer.
+[06/27/2021 08:54:13 INFO] Scale of 0 disables regularizer.
+[06/27/2021 08:54:13 INFO] Scale of 0 disables regularizer.
+[06/27/2021 08:54:13 INFO] Scale of 0 disables regularizer.
+[06/27/2021 08:54:13 INFO] Scale of 0 disables regularizer.
+[06/27/2021 08:54:14 INFO] Scale of 0 disables regularizer.
+[06/27/2021 08:54:14 INFO] Scale of 0 disables regularizer.
+[06/27/2021 08:54:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:24: The name tf.depth_to_space is deprecated. Please use tf.compat.v1.depth_to_space instead.
+
+[06/27/2021 08:54:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:164: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+[06/27/2021 08:54:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:185: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+[06/27/2021 08:54:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:201: The name tf.lin_space is deprecated. Please use tf.linspace instead.
+
+[06/27/2021 08:54:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:229: The name tf.matrix_solve_ls is deprecated. Please use tf.linalg.lstsq instead.
+
+[06/27/2021 08:54:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:237: The name tf.matrix_inverse is deprecated. Please use tf.linalg.inv instead.
+
+Traceback (most recent call last):
+  File "export_detections.py", line 38, in <module>
+    with experiment._init_graph(config, with_dataset=True) as (net, dataset):
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/mnt/semester4/SuperPoint/superpoint/experiment.py", line 74, in _init_graph
+    n_gpus=n_gpus, **config['model'])
+  File "/mnt/semester4/SuperPoint/superpoint/models/base_model.py", line 122, in __init__
+    self._build_graph()
+  File "/mnt/semester4/SuperPoint/superpoint/models/base_model.py", line 273, in _build_graph
+    self._pred_graph(self.pred_in)
+  File "/mnt/semester4/SuperPoint/superpoint/models/base_model.py", line 222, in _pred_graph
+    pred_out = self._gpu_tower(data, Mode.PRED, self.config['pred_batch_size'])
+  File "/mnt/semester4/SuperPoint/superpoint/models/base_model.py", line 157, in _gpu_tower
+    net_outputs = self._model(shards[i], mode, **self.config)
+  File "/mnt/semester4/SuperPoint/superpoint/models/magic_point.py", line 36, in _model
+    outputs = homography_adaptation(image, net, config['homography_adaptation'])
+  File "/mnt/semester4/SuperPoint/superpoint/models/homographies.py", line 96, in homography_adaptation
+    tf.TensorShape([None, None, None, 1, None])])
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/ops/control_flow_ops.py", line 2753, in while_loop
+    return_same_structure)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/ops/control_flow_ops.py", line 2245, in BuildLoop
+    pred, body, original_loop_vars, loop_vars, shape_invariants)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/ops/control_flow_ops.py", line 2170, in _BuildLoop
+    body_result = body(*packed_vars_for_body)
+  File "/mnt/semester4/SuperPoint/superpoint/models/homographies.py", line 56, in step
+    H_inv = invert_homography(H)
+  File "/mnt/semester4/SuperPoint/superpoint/models/homographies.py", line 237, in invert_homography
+    return mat2flat(tf.matrix_inverse(flat2mat(H)))
+  File "/mnt/semester4/SuperPoint/superpoint/models/homographies.py", line 245, in flat2mat
+    return tf.reshape(tf.concat([H, tf.ones([tf.shape(H)[0], 1])], axis=1), [-1, 3, 3])
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/ops/array_ops.py", line 2560, in ones
+    output = _constant_if_small(one, shape, dtype, name)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/ops/array_ops.py", line 2295, in _constant_if_small
+    if np.prod(shape) < 1000:
+  File "<__array_function__ internals>", line 6, in prod
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/numpy/core/fromnumeric.py", line 3052, in prod
+    keepdims=keepdims, initial=initial, where=where)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/numpy/core/fromnumeric.py", line 86, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/framework/ops.py", line 736, in __array__
+    " array.".format(self.name))
+NotImplementedError: Cannot convert a symbolic Tensor (magicpoint/pred_tower0/while/strided_slice_91:0) to a numpy array.
+export_detections.py:25: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  config = yaml.load(f)
+[06/27/2021 09:01:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/experiment.py:57: The name tf.set_random_seed is deprecated. Please use tf.compat.v1.set_random_seed instead.
+
+[06/27/2021 09:01:15 INFO] Number of GPUs detected: 1
+[06/27/2021 09:01:15 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.read_file is deprecated. Please use tf.io.read_file instead.
+
+[06/27/2021 09:01:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/pm.py:133: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+[06/27/2021 09:01:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/base_dataset.py:109: DatasetV1.make_one_shot_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_one_shot_iterator(dataset)`.
+[06/27/2021 09:01:16 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/base_dataset.py:111: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-06-27 09:01:16.621005: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-06-27 09:01:17.597721: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 09:01:17.597964: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:01:17.598741: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:01:17.599526: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 09:01:17.599744: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 09:01:17.600644: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:01:17.601326: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 09:01:17.603473: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:01:17.604856: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 09:01:17.605157: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-06-27 09:01:17.609817: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2445410000 Hz
+2021-06-27 09:01:17.609939: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x561b5460ddf0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-06-27 09:01:17.609954: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-06-27 09:01:17.705204: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x561b5460fd90 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-06-27 09:01:17.705239: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA Tesla T4, Compute Capability 7.5
+2021-06-27 09:01:17.705965: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 09:01:17.706009: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:01:17.706020: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:01:17.706029: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 09:01:17.706039: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 09:01:17.706048: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:01:17.706056: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 09:01:17.706066: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:01:17.707323: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 09:01:17.707355: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:01:17.708300: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1180] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-06-27 09:01:17.708312: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1186]      0 
+2021-06-27 09:01:17.708318: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1199] 0:   N 
+2021-06-27 09:01:17.709658: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1325] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14259 MB memory) -> physical GPU (device: 0, name: NVIDIA Tesla T4, pci bus id: 0001:00:00.0, compute capability: 7.5)
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:105: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:121: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:121: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:272: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:153: The name tf.train.replica_device_setter is deprecated. Please use tf.compat.v1.train.replica_device_setter instead.
+
+[06/27/2021 09:01:17 WARNING] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+[06/27/2021 09:01:17 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:10: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/layers/convolutional.py:424: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:14: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.BatchNormalization instead.  In particular, `tf.control_dependencies(tf.GraphKeys.UPDATE_OPS)` should not be used (consult the `tf.keras.layers.batch_normalization` documentation).
+[06/27/2021 09:01:17 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:28: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.MaxPooling2D instead.
+[06/27/2021 09:01:17 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:17 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:17 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:17 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:17 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:17 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:17 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:17 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:24: The name tf.depth_to_space is deprecated. Please use tf.compat.v1.depth_to_space instead.
+
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:164: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+[06/27/2021 09:01:17 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:185: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+[06/27/2021 09:01:18 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:201: The name tf.lin_space is deprecated. Please use tf.linspace instead.
+
+[06/27/2021 09:01:18 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:229: The name tf.matrix_solve_ls is deprecated. Please use tf.linalg.lstsq instead.
+
+[06/27/2021 09:01:18 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:237: The name tf.matrix_inverse is deprecated. Please use tf.linalg.inv instead.
+
+[06/27/2021 09:01:18 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:18 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:18 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:18 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:18 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:18 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:18 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:18 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:18 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:18 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:01:18 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:179: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+[06/27/2021 09:01:18 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:182: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+[06/27/2021 09:01:18 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:276: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2021-06-27 09:01:18.418861: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 09:01:18.418913: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:01:18.418927: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:01:18.418936: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 09:01:18.418945: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 09:01:18.418954: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:01:18.418963: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 09:01:18.418973: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:01:18.420230: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 09:01:18.420255: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1180] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-06-27 09:01:18.420261: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1186]      0 
+2021-06-27 09:01:18.420268: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1199] 0:   N 
+2021-06-27 09:01:18.421647: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1325] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14259 MB memory) -> physical GPU (device: 0, name: NVIDIA Tesla T4, pci bus id: 0001:00:00.0, compute capability: 7.5)
+[06/27/2021 09:01:18 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:287: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+[06/27/2021 09:01:18 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:288: The name tf.local_variables_initializer is deprecated. Please use tf.compat.v1.local_variables_initializer instead.
+
+[06/27/2021 09:01:18 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:392: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+[06/27/2021 09:01:19 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:393: The name tf.gfile.IsDirectory is deprecated. Please use tf.io.gfile.isdir instead.
+
+[06/27/2021 09:01:19 INFO] Restoring parameters from /mnt/semester4/experiment/magic-point_synth/model.ckpt-50000
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+0it [00:00, ?it/s]TypeError: only size-1 arrays can be converted to Python scalars
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "export_detections.py", line 62, in <module>
+    p = net.predict(data, keys='pred', batch=True)
+  File "/mnt/semester4/SuperPoint/superpoint/models/base_model.py", line 350, in predict
+    pred = self.sess.run(op, feed_dict=feed)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 956, in run
+    run_metadata_ptr)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/client/session.py", line 1149, in _run
+    np_val = np.asarray(subfeed_val, dtype=subfeed_dtype)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/numpy/core/_asarray.py", line 83, in asarray
+    return array(a, dtype, copy=False, order=order)
+ValueError: setting an array element with a sequence.
+export_detections.py:25: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  config = yaml.load(f)
+[06/27/2021 09:40:11 WARNING] From /mnt/semester4/SuperPoint/superpoint/experiment.py:57: The name tf.set_random_seed is deprecated. Please use tf.compat.v1.set_random_seed instead.
+
+[06/27/2021 09:40:11 INFO] Number of GPUs detected: 1
+[06/27/2021 09:40:12 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.read_file is deprecated. Please use tf.io.read_file instead.
+
+[06/27/2021 09:40:12 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.image.resize_images is deprecated. Please use tf.image.resize instead.
+
+[06/27/2021 09:40:12 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.image.resize_image_with_crop_or_pad is deprecated. Please use tf.image.resize_with_crop_or_pad instead.
+
+[06/27/2021 09:40:12 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/utils/pipeline.py:96: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+[06/27/2021 09:40:12 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/utils/pipeline.py:98: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+[06/27/2021 09:40:12 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/base_dataset.py:109: DatasetV1.make_one_shot_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_one_shot_iterator(dataset)`.
+[06/27/2021 09:40:13 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/base_dataset.py:111: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-06-27 09:40:13.888324: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-06-27 09:40:14.862483: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 09:40:14.862718: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:40:14.863515: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:40:14.864301: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 09:40:14.864526: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 09:40:14.865417: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:40:14.866086: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 09:40:14.868213: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:40:14.869614: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 09:40:14.869918: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-06-27 09:40:14.874527: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2445410000 Hz
+2021-06-27 09:40:14.874654: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x562072f88350 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-06-27 09:40:14.874669: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-06-27 09:40:14.970450: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x562072f71170 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-06-27 09:40:14.970484: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA Tesla T4, Compute Capability 7.5
+2021-06-27 09:40:14.971220: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 09:40:14.971264: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:40:14.971275: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:40:14.971284: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 09:40:14.971293: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 09:40:14.971302: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:40:14.971311: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 09:40:14.971321: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:40:14.972627: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 09:40:14.972658: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:40:14.973661: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1180] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-06-27 09:40:14.973673: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1186]      0 
+2021-06-27 09:40:14.973679: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1199] 0:   N 
+2021-06-27 09:40:14.975005: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1325] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14259 MB memory) -> physical GPU (device: 0, name: NVIDIA Tesla T4, pci bus id: 0001:00:00.0, compute capability: 7.5)
+[06/27/2021 09:40:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:105: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+[06/27/2021 09:40:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:121: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+[06/27/2021 09:40:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:121: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+[06/27/2021 09:40:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:272: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+[06/27/2021 09:40:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:153: The name tf.train.replica_device_setter is deprecated. Please use tf.compat.v1.train.replica_device_setter instead.
+
+[06/27/2021 09:40:14 WARNING] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+[06/27/2021 09:40:14 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:10: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+[06/27/2021 09:40:14 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/layers/convolutional.py:424: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+[06/27/2021 09:40:14 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:14: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.BatchNormalization instead.  In particular, `tf.control_dependencies(tf.GraphKeys.UPDATE_OPS)` should not be used (consult the `tf.keras.layers.batch_normalization` documentation).
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:28: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.MaxPooling2D instead.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:24: The name tf.depth_to_space is deprecated. Please use tf.compat.v1.depth_to_space instead.
+
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:164: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:185: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:201: The name tf.lin_space is deprecated. Please use tf.linspace instead.
+
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:229: The name tf.matrix_solve_ls is deprecated. Please use tf.linalg.lstsq instead.
+
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:237: The name tf.matrix_inverse is deprecated. Please use tf.linalg.inv instead.
+
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:179: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:276: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2021-06-27 09:40:15.741754: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 09:40:15.741807: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:40:15.741820: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:40:15.741830: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 09:40:15.741839: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 09:40:15.741848: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:40:15.741857: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 09:40:15.741866: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:40:15.743126: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 09:40:15.743149: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1180] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-06-27 09:40:15.743155: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1186]      0 
+2021-06-27 09:40:15.743160: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1199] 0:   N 
+2021-06-27 09:40:15.744455: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1325] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14259 MB memory) -> physical GPU (device: 0, name: NVIDIA Tesla T4, pci bus id: 0001:00:00.0, compute capability: 7.5)
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:287: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+[06/27/2021 09:40:15 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:288: The name tf.local_variables_initializer is deprecated. Please use tf.compat.v1.local_variables_initializer instead.
+
+[06/27/2021 09:40:16 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:392: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+[06/27/2021 09:40:16 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:393: The name tf.gfile.IsDirectory is deprecated. Please use tf.io.gfile.isdir instead.
+
+[06/27/2021 09:40:16 INFO] Restoring parameters from /mnt/semester4/experiment/magic-point_synth/model.ckpt-50000
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+0it [00:00, ?it/s]2021-06-27 09:40:18.567193: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:40:18.709923: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:40:19.382076: I tensorflow/core/kernels/cuda_solvers.cc:159] Creating CudaSolver handles for stream 0x562079a30700
+2021-06-27 09:40:19.382173: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:40:19.382901: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Not found: ./bin/ptxas not found
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2021-06-27 09:40:19.744823: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+1it [00:07,  7.18s/it]6it [00:10,  1.48s/it]11it [00:14,  1.04s/it]16it [00:17,  1.14it/s]21it [00:20,  1.24it/s]26it [00:24,  1.31it/s]31it [00:27,  1.36it/s]36it [00:31,  1.39it/s]41it [00:34,  1.41it/s]46it [00:37,  1.43it/s]51it [00:41,  1.44it/s]56it [00:44,  1.44it/s]61it [00:48,  1.45it/s]66it [00:51,  1.45it/s]71it [00:55,  1.45it/s]76it [00:58,  1.46it/s]81it [01:01,  1.46it/s]86it [01:05,  1.46it/s]91it [01:08,  1.46it/s]96it [01:12,  1.46it/s]101it [01:15,  1.46it/s]106it [01:19,  1.46it/s]111it [01:22,  1.46it/s]116it [01:25,  1.46it/s]121it [01:29,  1.46it/s]126it [01:32,  1.46it/s]131it [01:36,  1.46it/s]136it [01:39,  1.46it/s]141it [01:43,  1.46it/s]146it [01:46,  1.46it/s]151it [01:49,  1.46it/s]156it [01:53,  1.46it/s]161it [01:56,  1.45it/s]166it [02:00,  1.45it/s]171it [02:03,  1.45it/s]176it [02:07,  1.45it/s]181it [02:10,  1.45it/s]186it [02:14,  1.46it/s]191it [02:17,  1.46it/s]196it [02:20,  1.46it/s]201it [02:24,  1.46it/s]206it [02:27,  1.46it/s]211it [02:31,  1.46it/s]216it [02:34,  1.45it/s]221it [02:38,  1.45it/s]226it [02:41,  1.45it/s]231it [02:45,  1.45it/s]236it [02:48,  1.45it/s]241it [02:51,  1.45it/s]246it [02:55,  1.45it/s]251it [02:58,  1.45it/s]256it [03:02,  1.45it/s]261it [03:05,  1.45it/s]266it [03:09,  1.45it/s]271it [03:12,  1.46it/s]276it [03:15,  1.46it/s]281it [03:19,  1.46it/s]286it [03:22,  1.46it/s]291it [03:26,  1.46it/s]296it [03:29,  1.46it/s]301it [03:33,  1.46it/s]306it [03:36,  1.46it/s]311it [03:39,  1.46it/s]316it [03:43,  1.46it/s]321it [03:46,  1.46it/s]326it [03:50,  1.46it/s]331it [03:53,  1.46it/s]336it [03:57,  1.46it/s]341it [04:00,  1.46it/s]346it [04:03,  1.46it/s]351it [04:07,  1.46it/s]356it [04:10,  1.46it/s]361it [04:14,  1.46it/s]366it [04:17,  1.46it/s]371it [04:21,  1.46it/s]376it [04:24,  1.46it/s]381it [04:27,  1.46it/s]386it [04:31,  1.46it/s]391it [04:34,  1.46it/s]396it [04:38,  1.46it/s]401it [04:41,  1.46it/s]406it [04:45,  1.46it/s]411it [04:48,  1.46it/s]416it [04:51,  1.46it/s]421it [04:55,  1.46it/s]426it [04:58,  1.46it/s]431it [05:02,  1.46it/s]436it [05:05,  1.46it/s]441it [05:09,  1.46it/s]446it [05:12,  1.46it/s]451it [05:15,  1.46it/s]456it [05:19,  1.46it/s]461it [05:22,  1.46it/s]466it [05:26,  1.46it/s]471it [05:29,  1.46it/s]476it [05:33,  1.46it/s]481it [05:36,  1.46it/s]486it [05:40,  1.46it/s]491it [05:43,  1.45it/s]496it [05:46,  1.46it/s]501it [05:50,  1.46it/s]506it [05:53,  1.46it/s]511it [05:57,  1.46it/s]516it [06:00,  1.46it/s]521it [06:04,  1.46it/s]526it [06:07,  1.46it/s]531it [06:10,  1.46it/s]536it [06:14,  1.46it/s]541it [06:17,  1.46it/s]546it [06:21,  1.46it/s]551it [06:24,  1.46it/s]556it [06:28,  1.46it/s]561it [06:31,  1.46it/s]566it [06:34,  1.46it/s]571it [06:38,  1.46it/s]576it [06:41,  1.46it/s]581it [06:45,  1.46it/s]586it [06:48,  1.46it/s]591it [06:52,  1.46it/s]596it [06:55,  1.45it/s]601it [06:58,  1.45it/s]606it [07:02,  1.45it/s]611it [07:05,  1.45it/s]616it [07:09,  1.45it/s]621it [07:12,  1.46it/s]626it [07:16,  1.45it/s]631it [07:19,  1.46it/s]636it [07:23,  1.46it/s]641it [07:26,  1.46it/s]646it [07:29,  1.45it/s]651it [07:33,  1.45it/s]656it [07:36,  1.46it/s]661it [07:40,  1.45it/s]666it [07:43,  1.45it/s]671it [07:47,  1.45it/s]676it [07:50,  1.45it/s]681it [07:53,  1.45it/s]686it [07:57,  1.45it/s]691it [08:00,  1.45it/s]696it [08:04,  1.45it/s]701it [08:07,  1.45it/s]706it [08:11,  1.45it/s]711it [08:14,  1.45it/s]716it [08:18,  1.45it/s]721it [08:21,  1.45it/s]726it [08:24,  1.45it/s]731it [08:28,  1.45it/s]736it [08:31,  1.45it/s]741it [08:35,  1.45it/s]746it [08:38,  1.45it/s]751it [08:42,  1.45it/s]756it [08:45,  1.45it/s]761it [08:49,  1.45it/s]766it [08:52,  1.45it/s]771it [08:55,  1.45it/s]776it [08:59,  1.45it/s]781it [09:02,  1.45it/s]786it [09:06,  1.45it/s]791it [09:09,  1.45it/s]796it [09:13,  1.45it/s]801it [09:16,  1.45it/s]806it [09:20,  1.45it/s]811it [09:23,  1.45it/s]816it [09:26,  1.46it/s]821it [09:30,  1.45it/s]826it [09:33,  1.45it/s]831it [09:37,  1.45it/s]836it [09:40,  1.45it/s]841it [09:44,  1.46it/s]846it [09:47,  1.45it/s]851it [09:50,  1.46it/s]856it [09:54,  1.45it/s]861it [09:57,  1.46it/s]866it [10:01,  1.46it/s]871it [10:04,  1.45it/s]876it [10:08,  1.46it/s]881it [10:11,  1.46it/s]886it [10:14,  1.46it/s]891it [10:18,  1.46it/s]896it [10:21,  1.46it/s]901it [10:25,  1.46it/s]906it [10:28,  1.46it/s]911it [10:32,  1.45it/s]916it [10:35,  1.45it/s]921it [10:39,  1.45it/s]926it [10:42,  1.45it/s]931it [10:45,  1.45it/s]936it [10:49,  1.46it/s]941it [10:52,  1.46it/s]946it [10:56,  1.46it/s]951it [10:59,  1.45it/s]956it [11:03,  1.45it/s]961it [11:06,  1.45it/s]966it [11:09,  1.45it/s]971it [11:13,  1.45it/s]976it [11:16,  1.46it/s]981it [11:20,  1.46it/s]986it [11:23,  1.45it/s]991it [11:27,  1.45it/s]996it [11:30,  1.45it/s]1001it [11:34,  1.45it/s]1006it [11:37,  1.45it/s]1011it [11:40,  1.45it/s]1016it [11:44,  1.45it/s]1021it [11:47,  1.45it/s]1026it [11:51,  1.45it/s]1031it [11:54,  1.45it/s]1036it [11:58,  1.45it/s]1041it [12:01,  1.46it/s]1046it [12:04,  1.46it/s]1051it [12:08,  1.45it/s]1056it [12:11,  1.45it/s]1061it [12:15,  1.45it/s]1066it [12:18,  1.46it/s]1071it [12:22,  1.46it/s]1076it [12:25,  1.45it/s]1081it [12:29,  1.45it/s]1086it [12:32,  1.45it/s]1091it [12:35,  1.45it/s]1096it [12:39,  1.45it/s]1101it [12:42,  1.45it/s]1106it [12:46,  1.45it/s]1111it [12:49,  1.45it/s]Traceback (most recent call last):
+  File "export_detections.py", line 74, in <module>
+    np.savez_compressed(filepath, **p)
+  File "<__array_function__ internals>", line 6, in savez_compressed
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/numpy/lib/npyio.py", line 686, in savez_compressed
+    _savez(file, args, kwds, True)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/numpy/lib/npyio.py", line 712, in _savez
+    zipf = zipfile_factory(file, mode="w", compression=compression)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/numpy/lib/npyio.py", line 112, in zipfile_factory
+    return zipfile.ZipFile(file, *args, **kwargs)
+  File "/mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/zipfile.py", line 1240, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/semester4/experiment/outputs/magic-point_pm-export1/02070d57e839be2dc20781df466183dc.npz'
+export_detections.py:25: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  config = yaml.load(f)
+[06/27/2021 09:53:48 WARNING] From /mnt/semester4/SuperPoint/superpoint/experiment.py:57: The name tf.set_random_seed is deprecated. Please use tf.compat.v1.set_random_seed instead.
+
+[06/27/2021 09:53:48 INFO] Number of GPUs detected: 1
+[06/27/2021 09:53:48 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.read_file is deprecated. Please use tf.io.read_file instead.
+
+[06/27/2021 09:53:48 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.image.resize_images is deprecated. Please use tf.image.resize instead.
+
+[06/27/2021 09:53:48 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.image.resize_image_with_crop_or_pad is deprecated. Please use tf.image.resize_with_crop_or_pad instead.
+
+[06/27/2021 09:53:49 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/utils/pipeline.py:96: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+[06/27/2021 09:53:49 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/utils/pipeline.py:98: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+[06/27/2021 09:53:49 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/base_dataset.py:109: DatasetV1.make_one_shot_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_one_shot_iterator(dataset)`.
+[06/27/2021 09:53:50 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/base_dataset.py:111: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-06-27 09:53:50.051259: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-06-27 09:53:51.038730: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 09:53:51.038955: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:53:51.039725: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:53:51.040516: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 09:53:51.040731: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 09:53:51.041632: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:53:51.042320: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 09:53:51.044439: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:53:51.045824: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 09:53:51.046124: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-06-27 09:53:51.050804: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2445410000 Hz
+2021-06-27 09:53:51.050928: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55829473d670 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-06-27 09:53:51.050943: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-06-27 09:53:51.144366: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55829470aa10 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-06-27 09:53:51.144400: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA Tesla T4, Compute Capability 7.5
+2021-06-27 09:53:51.145198: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 09:53:51.145244: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:53:51.145256: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:53:51.145265: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 09:53:51.145274: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 09:53:51.145283: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:53:51.145292: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 09:53:51.145302: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:53:51.146563: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 09:53:51.146602: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:53:51.147546: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1180] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-06-27 09:53:51.147557: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1186]      0 
+2021-06-27 09:53:51.147563: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1199] 0:   N 
+2021-06-27 09:53:51.148913: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1325] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14259 MB memory) -> physical GPU (device: 0, name: NVIDIA Tesla T4, pci bus id: 0001:00:00.0, compute capability: 7.5)
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:105: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:121: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:121: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:272: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:153: The name tf.train.replica_device_setter is deprecated. Please use tf.compat.v1.train.replica_device_setter instead.
+
+[06/27/2021 09:53:51 WARNING] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:10: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/layers/convolutional.py:424: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:14: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.BatchNormalization instead.  In particular, `tf.control_dependencies(tf.GraphKeys.UPDATE_OPS)` should not be used (consult the `tf.keras.layers.batch_normalization` documentation).
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:28: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.MaxPooling2D instead.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:24: The name tf.depth_to_space is deprecated. Please use tf.compat.v1.depth_to_space instead.
+
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:164: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:185: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:201: The name tf.lin_space is deprecated. Please use tf.linspace instead.
+
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:229: The name tf.matrix_solve_ls is deprecated. Please use tf.linalg.lstsq instead.
+
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/homographies.py:237: The name tf.matrix_inverse is deprecated. Please use tf.linalg.inv instead.
+
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 INFO] Scale of 0 disables regularizer.
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:179: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:276: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2021-06-27 09:53:51.918088: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 09:53:51.918146: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 09:53:51.918160: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:53:51.918171: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 09:53:51.918190: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 09:53:51.918201: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:53:51.918211: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 09:53:51.918223: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:53:51.919479: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 09:53:51.919503: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1180] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-06-27 09:53:51.919509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1186]      0 
+2021-06-27 09:53:51.919514: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1199] 0:   N 
+2021-06-27 09:53:51.920829: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1325] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14259 MB memory) -> physical GPU (device: 0, name: NVIDIA Tesla T4, pci bus id: 0001:00:00.0, compute capability: 7.5)
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:287: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+[06/27/2021 09:53:51 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:288: The name tf.local_variables_initializer is deprecated. Please use tf.compat.v1.local_variables_initializer instead.
+
+[06/27/2021 09:53:52 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:392: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+[06/27/2021 09:53:52 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:393: The name tf.gfile.IsDirectory is deprecated. Please use tf.io.gfile.isdir instead.
+
+[06/27/2021 09:53:52 INFO] Restoring parameters from /mnt/semester4/experiment/magic-point_synth/model.ckpt-50000
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+0it [00:00, ?it/s]2021-06-27 09:53:54.790428: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 09:53:54.931120: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 09:53:55.617303: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Not found: ./bin/ptxas not found
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2021-06-27 09:53:56.505639: I tensorflow/core/kernels/cuda_solvers.cc:159] Creating CudaSolver handles for stream 0x55829b1c94f0
+2021-06-27 09:53:56.505706: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 09:53:56.652585: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+1it [00:10, 10.31s/it]11it [00:17,  1.31s/it]21it [00:23,  1.05it/s]31it [00:30,  1.21it/s]41it [00:37,  1.30it/s]51it [00:44,  1.35it/s]61it [00:51,  1.39it/s]71it [00:58,  1.41it/s]81it [01:04,  1.43it/s]91it [01:11,  1.44it/s]101it [01:18,  1.44it/s]111it [01:25,  1.45it/s]121it [01:32,  1.45it/s]131it [01:39,  1.46it/s]141it [01:45,  1.46it/s]151it [01:52,  1.46it/s]161it [01:59,  1.46it/s]171it [02:06,  1.46it/s]181it [02:13,  1.46it/s]191it [02:20,  1.46it/s]201it [02:27,  1.46it/s]211it [02:33,  1.46it/s]221it [02:40,  1.46it/s]231it [02:47,  1.46it/s]241it [02:54,  1.46it/s]251it [03:01,  1.46it/s]261it [03:08,  1.46it/s]271it [03:14,  1.46it/s]281it [03:21,  1.46it/s]291it [03:28,  1.46it/s]301it [03:35,  1.46it/s]311it [03:42,  1.46it/s]321it [03:49,  1.46it/s]331it [03:56,  1.46it/s]341it [04:02,  1.46it/s]351it [04:09,  1.46it/s]361it [04:16,  1.46it/s]371it [04:23,  1.46it/s]381it [04:30,  1.46it/s]391it [04:37,  1.46it/s]401it [04:44,  1.46it/s]411it [04:50,  1.46it/s]421it [04:57,  1.46it/s]431it [05:04,  1.46it/s]441it [05:11,  1.46it/s]451it [05:18,  1.46it/s]461it [05:25,  1.46it/s]471it [05:31,  1.46it/s]481it [05:38,  1.46it/s]491it [05:45,  1.46it/s]501it [05:52,  1.46it/s]511it [05:59,  1.46it/s]521it [06:06,  1.46it/s]531it [06:13,  1.46it/s]541it [06:19,  1.46it/s]551it [06:26,  1.46it/s]561it [06:33,  1.46it/s]571it [06:40,  1.46it/s]581it [06:47,  1.46it/s]591it [06:54,  1.46it/s]601it [07:01,  1.46it/s]611it [07:07,  1.46it/s]621it [07:14,  1.46it/s]631it [07:21,  1.46it/s]641it [07:28,  1.46it/s]651it [07:35,  1.46it/s]661it [07:42,  1.46it/s]671it [07:48,  1.46it/s]681it [07:55,  1.46it/s]691it [08:02,  1.46it/s]701it [08:09,  1.46it/s]711it [08:16,  1.46it/s]721it [08:23,  1.46it/s]731it [08:29,  1.46it/s]741it [08:36,  1.46it/s]751it [08:43,  1.46it/s]761it [08:50,  1.46it/s]771it [08:57,  1.46it/s]781it [09:04,  1.46it/s]791it [09:11,  1.46it/s]801it [09:17,  1.46it/s]811it [09:24,  1.46it/s]821it [09:31,  1.46it/s]831it [09:38,  1.46it/s]841it [09:45,  1.46it/s]851it [09:52,  1.46it/s]861it [09:58,  1.46it/s]871it [10:05,  1.46it/s]881it [10:12,  1.46it/s]891it [10:19,  1.46it/s]901it [10:26,  1.46it/s]911it [10:33,  1.46it/s]921it [10:39,  1.46it/s]931it [10:46,  1.46it/s]941it [10:53,  1.46it/s]951it [11:00,  1.46it/s]961it [11:07,  1.46it/s]971it [11:14,  1.46it/s]981it [11:20,  1.46it/s]991it [11:27,  1.46it/s]1001it [11:34,  1.46it/s]1011it [11:41,  1.46it/s]1021it [11:48,  1.46it/s]1031it [11:55,  1.46it/s]1041it [12:01,  1.46it/s]1051it [12:08,  1.47it/s]1061it [12:15,  1.46it/s]1071it [12:22,  1.46it/s]1081it [12:29,  1.46it/s]1091it [12:36,  1.46it/s]1101it [12:42,  1.46it/s]1111it [12:49,  1.46it/s]1121it [12:56,  1.46it/s]1131it [13:03,  1.46it/s]1141it [13:10,  1.46it/s]1151it [13:17,  1.46it/s]1161it [13:23,  1.46it/s]1171it [13:30,  1.47it/s]1181it [13:37,  1.46it/s]1191it [13:44,  1.47it/s]1201it [13:51,  1.47it/s]1211it [13:58,  1.46it/s]1221it [14:04,  1.46it/s]1231it [14:11,  1.46it/s]1241it [14:18,  1.46it/s]1251it [14:25,  1.46it/s]1261it [14:32,  1.46it/s]1271it [14:39,  1.46it/s]1281it [14:46,  1.46it/s]1291it [14:52,  1.46it/s]1301it [14:59,  1.46it/s]1311it [15:06,  1.46it/s]1321it [15:13,  1.46it/s]1331it [15:20,  1.46it/s]1341it [15:27,  1.46it/s]1351it [15:33,  1.46it/s]1361it [15:40,  1.46it/s]1371it [15:47,  1.46it/s]1381it [15:54,  1.46it/s]1391it [16:01,  1.46it/s]1401it [16:08,  1.46it/s]1411it [16:14,  1.46it/s]1421it [16:21,  1.46it/s]1431it [16:28,  1.46it/s]1441it [16:35,  1.46it/s]1451it [16:42,  1.46it/s]1461it [16:49,  1.46it/s]1471it [16:55,  1.46it/s]1481it [17:02,  1.46it/s]1491it [17:09,  1.46it/s]1501it [17:16,  1.46it/s]1511it [17:23,  1.46it/s]1521it [17:30,  1.46it/s]1531it [17:37,  1.46it/s]1541it [17:43,  1.46it/s]1551it [17:50,  1.46it/s]1561it [17:57,  1.46it/s]1571it [18:04,  1.46it/s]1581it [18:11,  1.46it/s]1591it [18:18,  1.46it/s]1601it [18:24,  1.46it/s]1611it [18:31,  1.46it/s]1621it [18:38,  1.46it/s]1631it [18:45,  1.46it/s]1641it [18:52,  1.46it/s]1651it [18:59,  1.46it/s]1661it [19:06,  1.46it/s]1671it [19:12,  1.46it/s]1681it [19:19,  1.46it/s]1691it [19:26,  1.46it/s]1701it [19:33,  1.46it/s]1711it [19:40,  1.46it/s]1721it [19:47,  1.46it/s]1731it [19:53,  1.46it/s]1741it [20:00,  1.46it/s]1751it [20:07,  1.46it/s]1761it [20:14,  1.46it/s]1771it [20:21,  1.46it/s]1781it [20:28,  1.46it/s]1791it [20:35,  1.46it/s]1801it [20:41,  1.46it/s]1811it [20:48,  1.46it/s]1821it [20:55,  1.46it/s]1831it [21:02,  1.46it/s]1841it [21:09,  1.46it/s]1851it [21:16,  1.46it/s]1861it [21:22,  1.46it/s]1871it [21:29,  1.46it/s]1881it [21:36,  1.46it/s]1891it [21:43,  1.46it/s]1901it [21:50,  1.46it/s]1911it [21:57,  1.46it/s]1921it [22:03,  1.46it/s]1931it [22:10,  1.46it/s]1941it [22:17,  1.46it/s]1951it [22:24,  1.46it/s]1961it [22:31,  1.46it/s]1971it [22:38,  1.46it/s]1981it [22:45,  1.46it/s]1991it [22:51,  1.46it/s]2001it [22:58,  1.46it/s]2011it [23:05,  1.46it/s]2021it [23:12,  1.46it/s]2031it [23:19,  1.46it/s]2041it [23:26,  1.46it/s]2051it [23:32,  1.46it/s]2061it [23:39,  1.46it/s]2071it [23:46,  1.46it/s]2081it [23:53,  1.46it/s]2091it [24:00,  1.46it/s]2101it [24:07,  1.46it/s]2111it [24:14,  1.46it/s]2121it [24:20,  1.46it/s]2131it [24:27,  1.46it/s]2141it [24:34,  1.46it/s]2151it [24:41,  1.46it/s]2161it [24:48,  1.46it/s]2171it [24:55,  1.46it/s]2181it [25:01,  1.46it/s]2191it [25:08,  1.46it/s]2201it [25:15,  1.46it/s]2211it [25:22,  1.46it/s]2221it [25:29,  1.46it/s]2231it [25:36,  1.46it/s]2241it [25:42,  1.46it/s]2251it [25:49,  1.46it/s]2261it [25:56,  1.46it/s]2271it [26:03,  1.46it/s]2281it [26:10,  1.46it/s]2291it [26:17,  1.46it/s]2301it [26:24,  1.46it/s]2311it [26:30,  1.46it/s]2321it [26:37,  1.46it/s]2331it [26:44,  1.46it/s]2341it [26:51,  1.46it/s]2351it [26:58,  1.46it/s]2361it [27:05,  1.46it/s]2371it [27:11,  1.46it/s]2381it [27:18,  1.46it/s]2391it [27:25,  1.46it/s]2401it [27:32,  1.46it/s]2411it [27:39,  1.46it/s]2421it [27:46,  1.46it/s]2431it [27:52,  1.46it/s]2441it [27:59,  1.46it/s]2451it [28:06,  1.46it/s]2461it [28:13,  1.46it/s]2471it [28:20,  1.46it/s]2481it [28:27,  1.46it/s]2491it [28:34,  1.46it/s]2501it [28:40,  1.46it/s]2511it [28:47,  1.46it/s]2521it [28:54,  1.46it/s]2531it [29:01,  1.46it/s]2541it [29:08,  1.46it/s]2551it [29:15,  1.46it/s]2561it [29:21,  1.46it/s]2571it [29:28,  1.46it/s]2581it [29:35,  1.46it/s]2591it [29:42,  1.46it/s]2601it [29:49,  1.46it/s]2611it [29:56,  1.46it/s]2621it [30:02,  1.46it/s]2631it [30:09,  1.46it/s]2641it [30:16,  1.46it/s]2651it [30:23,  1.46it/s]2661it [30:30,  1.46it/s]2671it [30:37,  1.46it/s]2681it [30:43,  1.46it/s]2691it [30:50,  1.46it/s]2701it [30:57,  1.46it/s]2711it [31:04,  1.46it/s]2721it [31:11,  1.46it/s]2731it [31:18,  1.46it/s]2741it [31:25,  1.46it/s]2751it [31:31,  1.46it/s]2761it [31:38,  1.46it/s]2771it [31:45,  1.46it/s]2781it [31:52,  1.46it/s]2791it [31:59,  1.46it/s]2801it [32:06,  1.46it/s]2811it [32:12,  1.46it/s]2821it [32:19,  1.46it/s]2831it [32:26,  1.46it/s]2841it [32:33,  1.46it/s]2851it [32:40,  1.46it/s]2861it [32:47,  1.46it/s]2871it [32:53,  1.46it/s]2881it [33:00,  1.46it/s]2891it [33:07,  1.46it/s]2901it [33:14,  1.46it/s]2911it [33:21,  1.46it/s]2921it [33:28,  1.46it/s]2931it [33:34,  1.46it/s]2941it [33:41,  1.46it/s]2951it [33:48,  1.46it/s]2961it [33:55,  1.46it/s]2971it [34:02,  1.46it/s]2981it [34:09,  1.46it/s]2991it [34:16,  1.46it/s]3001it [34:22,  1.46it/s]3011it [34:29,  1.46it/s]3021it [34:36,  1.46it/s]3031it [34:43,  1.46it/s]3041it [34:50,  1.46it/s]3051it [34:57,  1.46it/s]3061it [35:03,  1.46it/s]3071it [35:10,  1.46it/s]3081it [35:17,  1.46it/s]3091it [35:24,  1.46it/s]3101it [35:31,  1.46it/s]3111it [35:38,  1.46it/s]3121it [35:44,  1.46it/s]3131it [35:51,  1.46it/s]3141it [35:58,  1.46it/s]3151it [36:05,  1.46it/s]3161it [36:12,  1.46it/s]3171it [36:19,  1.46it/s]3181it [36:26,  1.46it/s]3191it [36:32,  1.46it/s]3201it [36:39,  1.46it/s]3211it [36:46,  1.46it/s]3221it [36:53,  1.46it/s]3231it [37:00,  1.46it/s]3241it [37:07,  1.46it/s]3251it [37:13,  1.46it/s]3261it [37:20,  1.46it/s]3271it [37:27,  1.46it/s]3281it [37:34,  1.46it/s]3291it [37:41,  1.46it/s]3301it [37:48,  1.46it/s]3311it [37:55,  1.46it/s]3321it [38:01,  1.46it/s]3331it [38:08,  1.46it/s]3341it [38:15,  1.46it/s]3351it [38:22,  1.46it/s]3361it [38:29,  1.46it/s]3371it [38:36,  1.46it/s]3381it [38:42,  1.46it/s]3391it [38:49,  1.46it/s]3401it [38:56,  1.46it/s]3411it [39:03,  1.46it/s]3421it [39:10,  1.46it/s]3431it [39:17,  1.46it/s]3441it [39:23,  1.46it/s]3451it [39:30,  1.46it/s]3461it [39:37,  1.46it/s]3471it [39:44,  1.46it/s]3481it [39:51,  1.46it/s]3491it [39:58,  1.46it/s]3501it [40:04,  1.46it/s]3511it [40:11,  1.46it/s]3521it [40:18,  1.46it/s]3531it [40:25,  1.46it/s]3541it [40:32,  1.46it/s]3551it [40:39,  1.46it/s]3561it [40:46,  1.46it/s]3571it [40:52,  1.46it/s]3581it [40:59,  1.46it/s]3591it [41:06,  1.46it/s]3601it [41:13,  1.46it/s]3611it [41:20,  1.46it/s]3621it [41:27,  1.46it/s]3631it [41:34,  1.46it/s]3641it [41:40,  1.46it/s]3651it [41:47,  1.46it/s]3661it [41:54,  1.46it/s]3671it [42:01,  1.46it/s]3681it [42:08,  1.46it/s]3691it [42:15,  1.46it/s]3701it [42:21,  1.46it/s]3711it [42:28,  1.46it/s]3721it [42:35,  1.46it/s]3731it [42:42,  1.46it/s]3741it [42:49,  1.46it/s]3751it [42:56,  1.46it/s]3761it [43:03,  1.46it/s]3771it [43:09,  1.46it/s]3781it [43:16,  1.46it/s]3791it [43:23,  1.46it/s]3801it [43:30,  1.46it/s]3811it [43:37,  1.46it/s]3821it [43:44,  1.46it/s]3831it [43:51,  1.46it/s]3841it [43:57,  1.46it/s]3851it [44:04,  1.46it/s]3861it [44:11,  1.46it/s]3871it [44:18,  1.46it/s]3881it [44:25,  1.46it/s]3891it [44:32,  1.46it/s]3901it [44:38,  1.46it/s]3911it [44:45,  1.46it/s]3921it [44:52,  1.46it/s]3931it [44:59,  1.46it/s]3941it [45:06,  1.46it/s]3951it [45:13,  1.46it/s]3961it [45:19,  1.46it/s]3971it [45:26,  1.46it/s]3981it [45:33,  1.46it/s]3991it [45:40,  1.46it/s]4001it [45:47,  1.46it/s]4011it [45:54,  1.46it/s]4021it [46:01,  1.46it/s]4031it [46:07,  1.46it/s]4041it [46:14,  1.46it/s]4051it [46:21,  1.46it/s]4061it [46:28,  1.46it/s]4071it [46:35,  1.46it/s]4081it [46:42,  1.46it/s]4091it [46:48,  1.46it/s]4101it [46:55,  1.46it/s]4111it [47:02,  1.46it/s]4121it [47:09,  1.46it/s]4131it [47:16,  1.46it/s]4141it [47:23,  1.46it/s]4151it [47:29,  1.46it/s]4161it [47:36,  1.46it/s]4171it [47:43,  1.46it/s]4181it [47:50,  1.46it/s]4191it [47:57,  1.46it/s]4201it [48:04,  1.46it/s]4211it [48:11,  1.46it/s]4221it [48:17,  1.46it/s]4231it [48:24,  1.46it/s]4241it [48:31,  1.46it/s]4251it [48:38,  1.46it/s]4261it [48:45,  1.46it/s]4271it [48:52,  1.46it/s]4281it [48:58,  1.46it/s]4291it [49:05,  1.46it/s]4301it [49:12,  1.46it/s]4311it [49:19,  1.46it/s]4321it [49:26,  1.46it/s]4331it [49:33,  1.46it/s]4341it [49:39,  1.46it/s]4351it [49:46,  1.46it/s]4361it [49:53,  1.46it/s]4371it [50:00,  1.46it/s]4381it [50:07,  1.46it/s]4391it [50:14,  1.46it/s]4401it [50:20,  1.46it/s]4411it [50:27,  1.46it/s]4421it [50:34,  1.46it/s]4431it [50:41,  1.46it/s]4441it [50:48,  1.46it/s]4451it [50:55,  1.46it/s]4461it [51:02,  1.46it/s]4471it [51:08,  1.46it/s]4481it [51:15,  1.46it/s]4491it [51:22,  1.46it/s]4501it [51:29,  1.46it/s]4511it [51:36,  1.46it/s]4521it [51:43,  1.46it/s]4531it [51:49,  1.46it/s]4541it [51:56,  1.46it/s]4551it [52:03,  1.46it/s]4561it [52:10,  1.46it/s]4571it [52:17,  1.46it/s]4581it [52:24,  1.46it/s]4591it [52:30,  1.46it/s]4601it [52:37,  1.46it/s]4611it [52:44,  1.46it/s]4621it [52:51,  1.46it/s]4631it [52:58,  1.46it/s]4641it [53:05,  1.46it/s]4651it [53:12,  1.46it/s]4661it [53:18,  1.46it/s]4671it [53:25,  1.46it/s]4681it [53:32,  1.46it/s]4691it [53:39,  1.46it/s]4701it [53:46,  1.46it/s]4711it [53:53,  1.46it/s]4721it [54:00,  1.46it/s]4731it [54:06,  1.46it/s]4741it [54:13,  1.46it/s]4751it [54:20,  1.46it/s]4761it [54:27,  1.46it/s]4771it [54:34,  1.46it/s]4781it [54:41,  1.46it/s]4791it [54:47,  1.46it/s]4801it [54:54,  1.46it/s]4811it [55:01,  1.46it/s]4821it [55:08,  1.46it/s]4831it [55:15,  1.46it/s]4841it [55:22,  1.46it/s]4851it [55:28,  1.46it/s]4861it [55:35,  1.46it/s]4871it [55:42,  1.46it/s]4881it [55:49,  1.46it/s]4891it [55:56,  1.46it/s]4901it [56:03,  1.46it/s]4911it [56:10,  1.46it/s]4921it [56:16,  1.46it/s]4931it [56:23,  1.46it/s]4941it [56:30,  1.46it/s]4951it [56:37,  1.46it/s]4961it [56:44,  1.46it/s]4971it [56:51,  1.46it/s]4981it [56:57,  1.46it/s]4991it [57:04,  1.46it/s]5001it [57:11,  1.47it/s]5011it [57:18,  1.47it/s]5021it [57:25,  1.47it/s]5031it [57:32,  1.46it/s]5041it [57:38,  1.47it/s]5051it [57:45,  1.47it/s]5061it [57:52,  1.46it/s]5071it [57:59,  1.46it/s]5081it [58:06,  1.46it/s]5091it [58:13,  1.46it/s]5101it [58:19,  1.46it/s]5111it [58:26,  1.46it/s]5121it [58:33,  1.46it/s]5131it [58:40,  1.46it/s]5141it [58:47,  1.46it/s]5151it [58:54,  1.46it/s]5161it [59:00,  1.46it/s]5171it [59:07,  1.46it/s]5181it [59:14,  1.46it/s]5191it [59:21,  1.46it/s]5201it [59:28,  1.46it/s]5211it [59:35,  1.46it/s]5221it [59:41,  1.46it/s]5231it [59:48,  1.46it/s]5241it [59:55,  1.46it/s]5251it [1:00:02,  1.46it/s]5261it [1:00:09,  1.46it/s]5271it [1:00:16,  1.46it/s]5281it [1:00:22,  1.47it/s]5291it [1:00:29,  1.46it/s]5301it [1:00:36,  1.46it/s]5311it [1:00:43,  1.46it/s]5321it [1:00:50,  1.46it/s]5331it [1:00:57,  1.46it/s]5341it [1:01:03,  1.46it/s]5351it [1:01:10,  1.46it/s]5361it [1:01:17,  1.46it/s]5371it [1:01:24,  1.46it/s]5381it [1:01:31,  1.46it/s]5391it [1:01:38,  1.46it/s]5401it [1:01:45,  1.46it/s]5411it [1:01:51,  1.46it/s]5421it [1:01:58,  1.46it/s]5431it [1:02:05,  1.46it/s]5441it [1:02:12,  1.46it/s]5451it [1:02:19,  1.46it/s]5461it [1:02:26,  1.46it/s]5471it [1:02:33,  1.46it/s]5481it [1:02:39,  1.46it/s]5491it [1:02:46,  1.46it/s]5501it [1:02:53,  1.46it/s]5511it [1:03:00,  1.46it/s]5521it [1:03:07,  1.46it/s]5531it [1:03:14,  1.46it/s]5541it [1:03:20,  1.46it/s]5551it [1:03:27,  1.46it/s]5561it [1:03:34,  1.46it/s]5571it [1:03:41,  1.46it/s]5581it [1:03:48,  1.46it/s]5591it [1:03:55,  1.46it/s]5601it [1:04:02,  1.46it/s]5611it [1:04:08,  1.46it/s]5621it [1:04:15,  1.46it/s]5631it [1:04:22,  1.46it/s]5641it [1:04:29,  1.46it/s]5651it [1:04:36,  1.46it/s]5661it [1:04:43,  1.46it/s]5671it [1:04:49,  1.46it/s]5681it [1:04:56,  1.46it/s]5691it [1:05:03,  1.46it/s]5701it [1:05:10,  1.46it/s]5711it [1:05:17,  1.46it/s]5721it [1:05:24,  1.46it/s]5731it [1:05:30,  1.46it/s]5741it [1:05:37,  1.46it/s]5751it [1:05:44,  1.46it/s]5761it [1:05:51,  1.46it/s]5771it [1:05:58,  1.46it/s]5781it [1:06:05,  1.47it/s]5791it [1:06:11,  1.47it/s]5801it [1:06:18,  1.47it/s]5811it [1:06:25,  1.46it/s]5821it [1:06:32,  1.46it/s]5831it [1:06:39,  1.46it/s]5841it [1:06:46,  1.46it/s]5851it [1:06:52,  1.46it/s]5861it [1:06:59,  1.46it/s]5871it [1:07:06,  1.46it/s]5881it [1:07:13,  1.46it/s]5891it [1:07:20,  1.46it/s]5901it [1:07:27,  1.46it/s]5911it [1:07:33,  1.46it/s]5921it [1:07:40,  1.46it/s]5931it [1:07:47,  1.46it/s]5941it [1:07:54,  1.46it/s]5951it [1:08:01,  1.46it/s]5961it [1:08:08,  1.46it/s]5971it [1:08:15,  1.46it/s]5981it [1:08:21,  1.46it/s]5991it [1:08:28,  1.46it/s]6001it [1:08:35,  1.46it/s]6011it [1:08:42,  1.46it/s]6021it [1:08:49,  1.46it/s]6031it [1:08:56,  1.46it/s]6041it [1:09:03,  1.46it/s]6051it [1:09:09,  1.46it/s]6061it [1:09:16,  1.46it/s]6071it [1:09:23,  1.46it/s]6081it [1:09:30,  1.46it/s]6091it [1:09:37,  1.46it/s]6101it [1:09:44,  1.46it/s]6111it [1:09:51,  1.46it/s]6121it [1:09:57,  1.46it/s]6131it [1:10:04,  1.46it/s]6141it [1:10:11,  1.46it/s]6151it [1:10:18,  1.46it/s]6161it [1:10:25,  1.46it/s]6171it [1:10:32,  1.46it/s]6181it [1:10:39,  1.46it/s]6191it [1:10:45,  1.46it/s]6201it [1:10:52,  1.46it/s]6211it [1:10:59,  1.46it/s]6221it [1:11:06,  1.46it/s]6231it [1:11:13,  1.46it/s]6241it [1:11:20,  1.46it/s]6251it [1:11:26,  1.46it/s]6261it [1:11:33,  1.46it/s]6271it [1:11:40,  1.46it/s]6281it [1:11:47,  1.46it/s]6291it [1:11:54,  1.46it/s]6301it [1:12:01,  1.46it/s]6311it [1:12:08,  1.46it/s]6321it [1:12:14,  1.46it/s]6331it [1:12:21,  1.46it/s]6341it [1:12:28,  1.46it/s]6351it [1:12:35,  1.46it/s]6361it [1:12:42,  1.46it/s]6371it [1:12:48,  1.46it/s]6381it [1:12:55,  1.46it/s]6391it [1:13:02,  1.46it/s]6401it [1:13:09,  1.46it/s]6411it [1:13:16,  1.46it/s]6421it [1:13:23,  1.46it/s]6431it [1:13:30,  1.46it/s]6441it [1:13:36,  1.46it/s]6451it [1:13:43,  1.46it/s]6461it [1:13:50,  1.46it/s]6471it [1:13:57,  1.46it/s]6481it [1:14:04,  1.46it/s]6491it [1:14:11,  1.46it/s]6501it [1:14:17,  1.46it/s]6511it [1:14:24,  1.46it/s]6521it [1:14:31,  1.46it/s]6531it [1:14:38,  1.46it/s]6541it [1:14:45,  1.46it/s]6551it [1:14:52,  1.46it/s]6561it [1:14:58,  1.46it/s]6571it [1:15:05,  1.46it/s]6581it [1:15:12,  1.46it/s]6591it [1:15:19,  1.46it/s]6601it [1:15:26,  1.46it/s]6611it [1:15:33,  1.46it/s]6621it [1:15:40,  1.46it/s]6631it [1:15:46,  1.46it/s]6641it [1:15:53,  1.46it/s]6651it [1:16:00,  1.46it/s]6661it [1:16:07,  1.46it/s]6671it [1:16:14,  1.46it/s]6681it [1:16:21,  1.46it/s]6691it [1:16:27,  1.46it/s]6701it [1:16:34,  1.46it/s]6711it [1:16:41,  1.46it/s]6721it [1:16:48,  1.46it/s]6731it [1:16:55,  1.46it/s]6741it [1:17:02,  1.46it/s]6751it [1:17:09,  1.46it/s]6761it [1:17:15,  1.46it/s]6771it [1:17:22,  1.46it/s]6781it [1:17:29,  1.46it/s]6791it [1:17:36,  1.46it/s]6801it [1:17:43,  1.46it/s]6811it [1:17:50,  1.46it/s]6821it [1:17:56,  1.46it/s]6831it [1:18:03,  1.46it/s]6841it [1:18:10,  1.46it/s]6851it [1:18:17,  1.46it/s]6861it [1:18:24,  1.47it/s]6871it [1:18:31,  1.46it/s]6881it [1:18:37,  1.46it/s]6891it [1:18:44,  1.47it/s]6901it [1:18:51,  1.46it/s]6911it [1:18:58,  1.47it/s]6921it [1:19:05,  1.46it/s]6931it [1:19:12,  1.46it/s]6941it [1:19:18,  1.46it/s]6951it [1:19:25,  1.46it/s]6961it [1:19:32,  1.47it/s]6971it [1:19:39,  1.47it/s]6981it [1:19:46,  1.46it/s]6991it [1:19:53,  1.46it/s]7001it [1:19:59,  1.46it/s]7011it [1:20:06,  1.46it/s]7021it [1:20:13,  1.46it/s]7031it [1:20:20,  1.46it/s]7041it [1:20:27,  1.46it/s]7051it [1:20:34,  1.46it/s]7061it [1:20:40,  1.46it/s]7071it [1:20:47,  1.46it/s]7081it [1:20:54,  1.46it/s]7091it [1:21:01,  1.46it/s]7101it [1:21:08,  1.46it/s]7111it [1:21:15,  1.46it/s]7121it [1:21:21,  1.46it/s]7131it [1:21:28,  1.46it/s]7141it [1:21:35,  1.47it/s]7151it [1:21:42,  1.47it/s]7161it [1:21:49,  1.46it/s]7171it [1:21:56,  1.46it/s]7181it [1:22:02,  1.46it/s]7191it [1:22:09,  1.46it/s]7201it [1:22:16,  1.46it/s]7211it [1:22:23,  1.46it/s]7221it [1:22:30,  1.46it/s]7231it [1:22:37,  1.46it/s]7241it [1:22:43,  1.46it/s]7251it [1:22:50,  1.46it/s]7261it [1:22:57,  1.46it/s]7271it [1:23:04,  1.46it/s]7281it [1:23:11,  1.46it/s]7291it [1:23:18,  1.46it/s]7301it [1:23:24,  1.46it/s]7311it [1:23:31,  1.46it/s]7321it [1:23:38,  1.46it/s]7331it [1:23:45,  1.46it/s]7341it [1:23:52,  1.46it/s]7351it [1:23:59,  1.46it/s]7361it [1:24:05,  1.46it/s]7371it [1:24:12,  1.46it/s]7381it [1:24:19,  1.47it/s]7391it [1:24:26,  1.47it/s]7401it [1:24:33,  1.46it/s]7411it [1:24:39,  1.46it/s]7421it [1:24:46,  1.47it/s]7431it [1:24:53,  1.47it/s]7441it [1:25:00,  1.47it/s]7451it [1:25:07,  1.47it/s]7461it [1:25:14,  1.47it/s]7471it [1:25:20,  1.47it/s]7481it [1:25:27,  1.47it/s]7491it [1:25:34,  1.47it/s]7501it [1:25:41,  1.46it/s]7511it [1:25:48,  1.46it/s]7521it [1:25:55,  1.46it/s]7531it [1:26:01,  1.46it/s]7541it [1:26:08,  1.46it/s]7551it [1:26:15,  1.46it/s]7561it [1:26:22,  1.46it/s]7571it [1:26:29,  1.46it/s]7581it [1:26:36,  1.46it/s]7591it [1:26:42,  1.46it/s]7601it [1:26:49,  1.47it/s]7611it [1:26:56,  1.46it/s]7621it [1:27:03,  1.46it/s]7631it [1:27:10,  1.46it/s]7641it [1:27:17,  1.46it/s]7651it [1:27:23,  1.46it/s]7661it [1:27:30,  1.46it/s]7671it [1:27:37,  1.46it/s]7681it [1:27:44,  1.46it/s]7691it [1:27:51,  1.46it/s]7701it [1:27:58,  1.46it/s]7711it [1:28:04,  1.47it/s]7721it [1:28:11,  1.46it/s]7731it [1:28:18,  1.46it/s]7741it [1:28:25,  1.46it/s]7751it [1:28:32,  1.46it/s]7761it [1:28:39,  1.46it/s]7771it [1:28:45,  1.46it/s]7781it [1:28:52,  1.46it/s]7791it [1:28:59,  1.46it/s]7801it [1:29:06,  1.46it/s]7811it [1:29:13,  1.46it/s]7821it [1:29:20,  1.46it/s]7831it [1:29:26,  1.46it/s]7841it [1:29:33,  1.46it/s]7851it [1:29:40,  1.46it/s]7861it [1:29:47,  1.46it/s]7871it [1:29:54,  1.46it/s]7881it [1:30:01,  1.46it/s]7891it [1:30:07,  1.46it/s]7901it [1:30:14,  1.46it/s]7911it [1:30:21,  1.46it/s]7921it [1:30:28,  1.46it/s]7931it [1:30:35,  1.46it/s]7941it [1:30:42,  1.46it/s]7951it [1:30:48,  1.46it/s]7961it [1:30:55,  1.46it/s]7971it [1:31:02,  1.46it/s]7981it [1:31:09,  1.46it/s]7991it [1:31:16,  1.46it/s]8001it [1:31:23,  1.46it/s]8011it [1:31:29,  1.46it/s]8021it [1:31:36,  1.46it/s]8031it [1:31:43,  1.46it/s]8041it [1:31:50,  1.46it/s]8051it [1:31:57,  1.46it/s]8061it [1:32:04,  1.46it/s]8071it [1:32:11,  1.46it/s]8081it [1:32:17,  1.46it/s]8091it [1:32:24,  1.46it/s]8101it [1:32:31,  1.46it/s]8111it [1:32:38,  1.46it/s]8121it [1:32:45,  1.46it/s]8131it [1:32:52,  1.46it/s]8141it [1:32:58,  1.46it/s]8151it [1:33:05,  1.46it/s]8161it [1:33:12,  1.46it/s]8171it [1:33:19,  1.46it/s]8181it [1:33:26,  1.46it/s]8191it [1:33:33,  1.46it/s]8201it [1:33:39,  1.46it/s]8211it [1:33:46,  1.46it/s]8221it [1:33:53,  1.46it/s]8231it [1:34:00,  1.46it/s]8241it [1:34:07,  1.46it/s]8251it [1:34:14,  1.46it/s]8261it [1:34:21,  1.46it/s]8271it [1:34:27,  1.46it/s]8281it [1:34:34,  1.46it/s]8291it [1:34:41,  1.46it/s]8301it [1:34:48,  1.47it/s]8311it [1:34:55,  1.46it/s]8321it [1:35:01,  1.46it/s]8331it [1:35:08,  1.46it/s]8341it [1:35:15,  1.46it/s]8351it [1:35:22,  1.46it/s]8361it [1:35:29,  1.46it/s]8371it [1:35:36,  1.46it/s]8381it [1:35:42,  1.46it/s]8391it [1:35:49,  1.46it/s]8401it [1:35:56,  1.47it/s]8411it [1:36:03,  1.47it/s]8421it [1:36:10,  1.46it/s]8431it [1:36:17,  1.47it/s]8441it [1:36:23,  1.46it/s]8451it [1:36:30,  1.46it/s]8461it [1:36:37,  1.46it/s]8471it [1:36:44,  1.46it/s]8481it [1:36:51,  1.46it/s]8491it [1:36:58,  1.47it/s]8501it [1:37:04,  1.47it/s]8511it [1:37:11,  1.46it/s]8521it [1:37:18,  1.46it/s]8531it [1:37:25,  1.46it/s]8541it [1:37:32,  1.46it/s]8551it [1:37:39,  1.46it/s]8561it [1:37:45,  1.46it/s]8571it [1:37:52,  1.46it/s]8581it [1:37:59,  1.46it/s]8591it [1:38:06,  1.46it/s]8601it [1:38:13,  1.47it/s]8611it [1:38:20,  1.47it/s]8621it [1:38:26,  1.46it/s]8631it [1:38:33,  1.46it/s]8641it [1:38:40,  1.46it/s]8651it [1:38:47,  1.46it/s]8661it [1:38:54,  1.46it/s]8671it [1:39:01,  1.46it/s]8681it [1:39:07,  1.46it/s]8691it [1:39:14,  1.46it/s]8701it [1:39:21,  1.46it/s]8711it [1:39:28,  1.47it/s]8721it [1:39:35,  1.46it/s]8731it [1:39:42,  1.46it/s]8741it [1:39:48,  1.46it/s]8751it [1:39:55,  1.46it/s]8761it [1:40:02,  1.46it/s]8771it [1:40:09,  1.47it/s]8781it [1:40:16,  1.47it/s]8791it [1:40:23,  1.46it/s]8801it [1:40:29,  1.46it/s]8811it [1:40:36,  1.46it/s]8821it [1:40:43,  1.47it/s]8831it [1:40:50,  1.46it/s]8841it [1:40:57,  1.46it/s]8851it [1:41:04,  1.46it/s]8861it [1:41:10,  1.46it/s]8871it [1:41:17,  1.46it/s]8881it [1:41:24,  1.46it/s]8891it [1:41:31,  1.46it/s]8901it [1:41:38,  1.46it/s]8911it [1:41:44,  1.47it/s]8921it [1:41:51,  1.46it/s]8931it [1:41:58,  1.47it/s]8941it [1:42:05,  1.47it/s]8951it [1:42:12,  1.47it/s]8961it [1:42:19,  1.47it/s]8971it [1:42:25,  1.46it/s]8981it [1:42:32,  1.46it/s]8991it [1:42:39,  1.46it/s]9001it [1:42:46,  1.46it/s]9011it [1:42:53,  1.46it/s]9021it [1:43:00,  1.46it/s]9031it [1:43:07,  1.46it/s]9041it [1:43:13,  1.46it/s]9051it [1:43:20,  1.46it/s]9061it [1:43:27,  1.46it/s]9071it [1:43:34,  1.46it/s]9081it [1:43:41,  1.46it/s]9091it [1:43:48,  1.46it/s]9101it [1:43:54,  1.46it/s]9111it [1:44:01,  1.46it/s]9121it [1:44:08,  1.46it/s]9131it [1:44:15,  1.46it/s]9141it [1:44:22,  1.46it/s]9151it [1:44:29,  1.46it/s]9161it [1:44:35,  1.46it/s]9171it [1:44:42,  1.46it/s]9181it [1:44:49,  1.46it/s]9191it [1:44:56,  1.46it/s]9201it [1:45:03,  1.46it/s]9211it [1:45:10,  1.46it/s]9221it [1:45:16,  1.46it/s]9231it [1:45:23,  1.46it/s]9241it [1:45:30,  1.46it/s]9251it [1:45:37,  1.46it/s]9261it [1:45:44,  1.46it/s]9271it [1:45:51,  1.46it/s]9281it [1:45:57,  1.47it/s]9291it [1:46:04,  1.46it/s]9301it [1:46:11,  1.46it/s]9311it [1:46:18,  1.46it/s]9321it [1:46:25,  1.46it/s]9331it [1:46:32,  1.46it/s]9341it [1:46:38,  1.46it/s]9351it [1:46:45,  1.46it/s]9361it [1:46:52,  1.46it/s]9371it [1:46:59,  1.46it/s]9381it [1:47:06,  1.46it/s]9391it [1:47:13,  1.46it/s]9401it [1:47:19,  1.46it/s]9411it [1:47:26,  1.46it/s]9421it [1:47:33,  1.46it/s]9431it [1:47:40,  1.46it/s]9441it [1:47:47,  1.46it/s]9451it [1:47:54,  1.46it/s]9461it [1:48:01,  1.46it/s]9471it [1:48:07,  1.46it/s]9481it [1:48:14,  1.46it/s]9491it [1:48:21,  1.46it/s]9501it [1:48:28,  1.46it/s]9511it [1:48:35,  1.46it/s]9521it [1:48:42,  1.46it/s]9531it [1:48:48,  1.46it/s]9541it [1:48:55,  1.46it/s]9551it [1:49:02,  1.46it/s]9561it [1:49:09,  1.46it/s]9571it [1:49:16,  1.46it/s]9581it [1:49:23,  1.46it/s]9591it [1:49:29,  1.46it/s]9601it [1:49:36,  1.46it/s]9611it [1:49:43,  1.47it/s]9621it [1:49:50,  1.46it/s]9631it [1:49:57,  1.46it/s]9641it [1:50:04,  1.46it/s]9651it [1:50:10,  1.46it/s]9661it [1:50:17,  1.46it/s]9671it [1:50:24,  1.46it/s]9681it [1:50:31,  1.46it/s]9691it [1:50:38,  1.46it/s]9701it [1:50:45,  1.46it/s]9711it [1:50:51,  1.46it/s]9721it [1:50:58,  1.46it/s]9731it [1:51:05,  1.46it/s]9741it [1:51:12,  1.46it/s]9751it [1:51:19,  1.46it/s]9761it [1:51:26,  1.46it/s]9771it [1:51:32,  1.46it/s]9781it [1:51:39,  1.46it/s]9791it [1:51:46,  1.46it/s]9801it [1:51:53,  1.46it/s]9811it [1:52:00,  1.46it/s]9821it [1:52:07,  1.46it/s]9831it [1:52:14,  1.46it/s]9841it [1:52:20,  1.46it/s]9851it [1:52:27,  1.46it/s]9861it [1:52:34,  1.46it/s]9871it [1:52:41,  1.46it/s]9881it [1:52:48,  1.46it/s]9891it [1:52:55,  1.46it/s]9901it [1:53:02,  1.46it/s]9911it [1:53:08,  1.46it/s]9921it [1:53:15,  1.46it/s]9931it [1:53:22,  1.46it/s]9941it [1:53:29,  1.46it/s]9951it [1:53:36,  1.46it/s]9961it [1:53:43,  1.46it/s]9971it [1:53:49,  1.46it/s]9981it [1:53:56,  1.46it/s]9991it [1:54:03,  1.46it/s]10001it [1:54:10,  1.46it/s]10011it [1:54:17,  1.46it/s]10021it [1:54:24,  1.46it/s]10031it [1:54:31,  1.46it/s]10041it [1:54:37,  1.46it/s]10051it [1:54:44,  1.46it/s]10061it [1:54:51,  1.46it/s]10071it [1:54:58,  1.46it/s]10081it [1:55:05,  1.46it/s]10091it [1:55:12,  1.46it/s]10101it [1:55:18,  1.46it/s]10111it [1:55:25,  1.46it/s]10121it [1:55:32,  1.46it/s]10131it [1:55:39,  1.46it/s]10141it [1:55:46,  1.46it/s]10151it [1:55:53,  1.46it/s]10161it [1:55:59,  1.46it/s]10171it [1:56:06,  1.46it/s]10181it [1:56:13,  1.46it/s]10191it [1:56:20,  1.46it/s]10201it [1:56:27,  1.46it/s]10211it [1:56:34,  1.46it/s]10221it [1:56:41,  1.46it/s]10231it [1:56:47,  1.46it/s]10241it [1:56:54,  1.46it/s]10251it [1:57:01,  1.46it/s]10261it [1:57:08,  1.46it/s]10271it [1:57:15,  1.46it/s]10281it [1:57:22,  1.46it/s]10291it [1:57:28,  1.46it/s]10301it [1:57:35,  1.46it/s]10311it [1:57:42,  1.46it/s]10321it [1:57:49,  1.46it/s]10331it [1:57:56,  1.46it/s]10341it [1:58:03,  1.46it/s]10351it [1:58:10,  1.46it/s]10361it [1:58:16,  1.46it/s]10371it [1:58:23,  1.46it/s]10381it [1:58:30,  1.46it/s]10391it [1:58:37,  1.46it/s]10401it [1:58:44,  1.46it/s]10411it [1:58:51,  1.46it/s]10421it [1:58:58,  1.46it/s]10431it [1:59:04,  1.46it/s]10441it [1:59:11,  1.46it/s]10451it [1:59:18,  1.46it/s]10461it [1:59:25,  1.46it/s]10471it [1:59:32,  1.46it/s]10481it [1:59:39,  1.46it/s]10491it [1:59:45,  1.46it/s]10501it [1:59:52,  1.46it/s]10511it [1:59:59,  1.46it/s]10521it [2:00:06,  1.46it/s]10531it [2:00:13,  1.46it/s]10541it [2:00:20,  1.46it/s]10551it [2:00:27,  1.46it/s]10561it [2:00:33,  1.46it/s]10571it [2:00:40,  1.46it/s]10581it [2:00:47,  1.46it/s]10591it [2:00:54,  1.46it/s]10601it [2:01:01,  1.46it/s]10611it [2:01:08,  1.46it/s]10621it [2:01:14,  1.46it/s]10631it [2:01:21,  1.46it/s]10641it [2:01:28,  1.46it/s]10651it [2:01:35,  1.46it/s]10661it [2:01:42,  1.46it/s]10671it [2:01:49,  1.46it/s]10681it [2:01:56,  1.46it/s]10691it [2:02:02,  1.46it/s]10701it [2:02:09,  1.46it/s]10711it [2:02:16,  1.46it/s]10721it [2:02:23,  1.46it/s]10731it [2:02:30,  1.47it/s]10741it [2:02:37,  1.46it/s]10751it [2:02:43,  1.47it/s]10761it [2:02:50,  1.46it/s]10771it [2:02:57,  1.47it/s]10781it [2:03:04,  1.46it/s]10791it [2:03:11,  1.46it/s]10801it [2:03:18,  1.46it/s]10811it [2:03:24,  1.46it/s]10821it [2:03:31,  1.46it/s]10831it [2:03:38,  1.47it/s]10841it [2:03:45,  1.46it/s]10851it [2:03:52,  1.47it/s]10861it [2:03:58,  1.47it/s]10871it [2:04:05,  1.47it/s]10881it [2:04:12,  1.46it/s]10891it [2:04:19,  1.46it/s]10901it [2:04:26,  1.46it/s]10911it [2:04:33,  1.46it/s]10921it [2:04:39,  1.46it/s]10931it [2:04:46,  1.46it/s]10941it [2:04:53,  1.46it/s]10951it [2:05:00,  1.46it/s]10961it [2:05:07,  1.46it/s]10971it [2:05:14,  1.47it/s]10981it [2:05:20,  1.47it/s]10991it [2:05:27,  1.46it/s]11001it [2:05:34,  1.46it/s]11011it [2:05:41,  1.46it/s]11021it [2:05:48,  1.46it/s]11031it [2:05:55,  1.46it/s]11041it [2:06:02,  1.46it/s]11051it [2:06:08,  1.46it/s]11061it [2:06:15,  1.46it/s]11071it [2:06:22,  1.46it/s]11081it [2:06:29,  1.46it/s]11091it [2:06:36,  1.46it/s]11101it [2:06:43,  1.46it/s]11111it [2:06:50,  1.46it/s]11121it [2:06:56,  1.46it/s]11131it [2:07:03,  1.46it/s]11141it [2:07:10,  1.46it/s]11151it [2:07:17,  1.46it/s]11161it [2:07:24,  1.46it/s]11171it [2:07:31,  1.46it/s]11181it [2:07:37,  1.46it/s]11191it [2:07:44,  1.46it/s]11201it [2:07:51,  1.46it/s]11211it [2:07:58,  1.46it/s]11221it [2:08:05,  1.46it/s]11231it [2:08:12,  1.46it/s]11241it [2:08:19,  1.46it/s]11251it [2:08:25,  1.46it/s]11261it [2:08:32,  1.46it/s]11271it [2:08:39,  1.46it/s]11281it [2:08:46,  1.46it/s]11291it [2:08:53,  1.46it/s]11301it [2:09:00,  1.46it/s]11311it [2:09:07,  1.46it/s]11321it [2:09:13,  1.46it/s]11331it [2:09:20,  1.46it/s]11341it [2:09:27,  1.46it/s]11351it [2:09:34,  1.46it/s]11361it [2:09:41,  1.46it/s]11371it [2:09:48,  1.46it/s]11381it [2:09:54,  1.46it/s]11391it [2:10:01,  1.46it/s]11401it [2:10:08,  1.46it/s]11411it [2:10:15,  1.46it/s]11421it [2:10:22,  1.46it/s]11431it [2:10:29,  1.46it/s]11441it [2:10:35,  1.46it/s]11451it [2:10:42,  1.46it/s]11461it [2:10:49,  1.46it/s]11471it [2:10:56,  1.46it/s]11481it [2:11:03,  1.46it/s]11491it [2:11:10,  1.46it/s]11501it [2:11:16,  1.46it/s]11511it [2:11:23,  1.46it/s]11521it [2:11:30,  1.46it/s]11531it [2:11:37,  1.46it/s]11541it [2:11:44,  1.46it/s]11551it [2:11:51,  1.46it/s]11561it [2:11:58,  1.46it/s]11571it [2:12:04,  1.46it/s]11581it [2:12:11,  1.46it/s]11591it [2:12:18,  1.46it/s]11601it [2:12:25,  1.46it/s]11611it [2:12:32,  1.46it/s]11621it [2:12:39,  1.46it/s]11631it [2:12:45,  1.46it/s]11641it [2:12:52,  1.46it/s]11651it [2:12:59,  1.46it/s]11661it [2:13:06,  1.46it/s]11671it [2:13:13,  1.46it/s]11681it [2:13:20,  1.46it/s]11691it [2:13:27,  1.46it/s]11701it [2:13:33,  1.46it/s]11711it [2:13:40,  1.47it/s]11721it [2:13:47,  1.46it/s]11731it [2:13:54,  1.46it/s]11741it [2:14:01,  1.46it/s]11751it [2:14:07,  1.46it/s]11761it [2:14:14,  1.46it/s]11771it [2:14:21,  1.46it/s]11781it [2:14:28,  1.46it/s]11791it [2:14:35,  1.46it/s]11801it [2:14:42,  1.46it/s]11811it [2:14:49,  1.46it/s]11821it [2:14:55,  1.46it/s]11831it [2:15:02,  1.46it/s]11841it [2:15:09,  1.46it/s]11851it [2:15:16,  1.46it/s]11861it [2:15:23,  1.46it/s]11871it [2:15:30,  1.46it/s]11881it [2:15:36,  1.46it/s]11891it [2:15:43,  1.46it/s]11901it [2:15:50,  1.46it/s]11911it [2:15:57,  1.46it/s]11921it [2:16:04,  1.46it/s]11931it [2:16:11,  1.46it/s]11941it [2:16:17,  1.46it/s]11951it [2:16:24,  1.46it/s]11961it [2:16:31,  1.46it/s]11971it [2:16:38,  1.46it/s]11981it [2:16:45,  1.46it/s]11991it [2:16:52,  1.46it/s]12001it [2:16:59,  1.46it/s]12011it [2:17:05,  1.46it/s]12021it [2:17:12,  1.46it/s]12031it [2:17:19,  1.46it/s]12041it [2:17:26,  1.46it/s]12051it [2:17:33,  1.46it/s]12061it [2:17:40,  1.46it/s]12071it [2:17:47,  1.46it/s]12081it [2:17:53,  1.46it/s]12091it [2:18:00,  1.46it/s]12101it [2:18:07,  1.46it/s]12111it [2:18:14,  1.46it/s]12121it [2:18:21,  1.46it/s]12131it [2:18:28,  1.46it/s]12141it [2:18:34,  1.46it/s]12151it [2:18:41,  1.46it/s]12161it [2:18:48,  1.46it/s]12171it [2:18:55,  1.46it/s]12181it [2:19:02,  1.46it/s]12191it [2:19:09,  1.46it/s]12201it [2:19:15,  1.46it/s]12211it [2:19:22,  1.46it/s]12221it [2:19:29,  1.46it/s]12231it [2:19:36,  1.46it/s]12241it [2:19:43,  1.46it/s]12251it [2:19:50,  1.46it/s]12261it [2:19:57,  1.46it/s]12271it [2:20:03,  1.46it/s]12281it [2:20:10,  1.46it/s]12291it [2:20:17,  1.46it/s]12301it [2:20:24,  1.46it/s]12311it [2:20:31,  1.46it/s]12321it [2:20:38,  1.46it/s]12331it [2:20:44,  1.46it/s]12341it [2:20:51,  1.46it/s]12351it [2:20:58,  1.46it/s]12361it [2:21:05,  1.46it/s]12371it [2:21:12,  1.46it/s]12381it [2:21:19,  1.46it/s]12391it [2:21:26,  1.46it/s]12401it [2:21:32,  1.46it/s]12411it [2:21:39,  1.46it/s]12421it [2:21:46,  1.46it/s]12431it [2:21:53,  1.46it/s]12441it [2:22:00,  1.46it/s]12451it [2:22:07,  1.46it/s]12461it [2:22:13,  1.46it/s]12471it [2:22:20,  1.46it/s]12481it [2:22:27,  1.46it/s]12491it [2:22:34,  1.46it/s]12501it [2:22:41,  1.46it/s]12511it [2:22:48,  1.46it/s]12521it [2:22:54,  1.46it/s]12531it [2:23:01,  1.46it/s]12541it [2:23:08,  1.46it/s]12551it [2:23:15,  1.47it/s]12561it [2:23:22,  1.46it/s]12571it [2:23:29,  1.46it/s]12581it [2:23:35,  1.46it/s]12591it [2:23:42,  1.46it/s]12601it [2:23:49,  1.46it/s]12611it [2:23:56,  1.46it/s]12621it [2:24:03,  1.46it/s]12631it [2:24:10,  1.46it/s]12641it [2:24:16,  1.46it/s]12651it [2:24:23,  1.46it/s]12661it [2:24:30,  1.46it/s]12671it [2:24:37,  1.46it/s]12681it [2:24:44,  1.46it/s]12691it [2:24:51,  1.47it/s]12701it [2:24:57,  1.46it/s]12711it [2:25:04,  1.47it/s]12721it [2:25:11,  1.47it/s]12731it [2:25:18,  1.47it/s]12741it [2:25:25,  1.46it/s]12751it [2:25:32,  1.46it/s]12761it [2:25:38,  1.46it/s]12771it [2:25:45,  1.46it/s]12781it [2:25:52,  1.46it/s]12791it [2:25:59,  1.46it/s]12801it [2:26:06,  1.46it/s]12811it [2:26:13,  1.46it/s]12821it [2:26:19,  1.46it/s]12831it [2:26:26,  1.46it/s]12841it [2:26:33,  1.46it/s]12851it [2:26:40,  1.46it/s]12861it [2:26:47,  1.46it/s]12871it [2:26:54,  1.46it/s]12881it [2:27:01,  1.46it/s]12891it [2:27:07,  1.46it/s]12901it [2:27:14,  1.46it/s]12911it [2:27:21,  1.46it/s]12921it [2:27:28,  1.46it/s]12931it [2:27:35,  1.46it/s]12941it [2:27:41,  1.47it/s]12951it [2:27:48,  1.47it/s]12961it [2:27:55,  1.47it/s]12971it [2:28:02,  1.47it/s]12981it [2:28:09,  1.46it/s]12991it [2:28:16,  1.47it/s]13001it [2:28:22,  1.47it/s]13011it [2:28:29,  1.46it/s]13021it [2:28:36,  1.46it/s]13031it [2:28:43,  1.46it/s]13041it [2:28:50,  1.46it/s]13051it [2:28:57,  1.46it/s]13061it [2:29:04,  1.46it/s]13071it [2:29:10,  1.46it/s]13081it [2:29:17,  1.46it/s]13091it [2:29:24,  1.46it/s]13101it [2:29:31,  1.46it/s]13111it [2:29:38,  1.46it/s]13121it [2:29:45,  1.46it/s]13131it [2:29:51,  1.46it/s]13141it [2:29:58,  1.46it/s]13151it [2:30:05,  1.46it/s]13161it [2:30:12,  1.46it/s]13171it [2:30:19,  1.46it/s]13181it [2:30:26,  1.46it/s]13191it [2:30:32,  1.46it/s]13201it [2:30:39,  1.46it/s]13211it [2:30:46,  1.46it/s]13221it [2:30:53,  1.47it/s]13231it [2:31:00,  1.47it/s]13241it [2:31:06,  1.47it/s]13251it [2:31:13,  1.47it/s]13261it [2:31:20,  1.46it/s]13271it [2:31:27,  1.46it/s]13281it [2:31:34,  1.47it/s]13291it [2:31:41,  1.47it/s]13301it [2:31:47,  1.47it/s]13311it [2:31:54,  1.47it/s]13321it [2:32:01,  1.47it/s]13331it [2:32:08,  1.47it/s]13341it [2:32:15,  1.47it/s]13351it [2:32:22,  1.47it/s]13361it [2:32:28,  1.47it/s]13371it [2:32:35,  1.47it/s]13381it [2:32:42,  1.46it/s]13391it [2:32:49,  1.47it/s]13401it [2:32:56,  1.47it/s]13411it [2:33:02,  1.47it/s]13421it [2:33:09,  1.47it/s]13431it [2:33:16,  1.46it/s]13441it [2:33:23,  1.47it/s]13451it [2:33:30,  1.47it/s]13461it [2:33:37,  1.47it/s]13471it [2:33:43,  1.47it/s]13481it [2:33:50,  1.46it/s]13491it [2:33:57,  1.46it/s]13501it [2:34:04,  1.46it/s]13511it [2:34:11,  1.46it/s]13521it [2:34:18,  1.46it/s]13531it [2:34:24,  1.46it/s]13541it [2:34:31,  1.46it/s]13551it [2:34:38,  1.46it/s]13561it [2:34:45,  1.46it/s]13571it [2:34:52,  1.46it/s]13581it [2:34:59,  1.46it/s]13591it [2:35:06,  1.46it/s]13601it [2:35:12,  1.46it/s]13611it [2:35:19,  1.46it/s]13621it [2:35:26,  1.46it/s]13631it [2:35:33,  1.46it/s]13641it [2:35:40,  1.46it/s]13651it [2:35:47,  1.46it/s]13661it [2:35:53,  1.47it/s]13671it [2:36:00,  1.46it/s]13681it [2:36:07,  1.46it/s]13691it [2:36:14,  1.47it/s]13701it [2:36:21,  1.46it/s]13711it [2:36:27,  1.46it/s]13721it [2:36:34,  1.46it/s]13731it [2:36:41,  1.46it/s]13741it [2:36:48,  1.46it/s]13751it [2:36:55,  1.46it/s]13761it [2:37:02,  1.46it/s]13771it [2:37:09,  1.46it/s]13781it [2:37:15,  1.46it/s]13791it [2:37:22,  1.46it/s]13801it [2:37:29,  1.46it/s]13811it [2:37:36,  1.46it/s]13821it [2:37:43,  1.46it/s]13831it [2:37:50,  1.46it/s]13841it [2:37:56,  1.46it/s]13851it [2:38:03,  1.46it/s]13861it [2:38:10,  1.46it/s]13871it [2:38:17,  1.46it/s]13881it [2:38:24,  1.46it/s]13891it [2:38:31,  1.46it/s]13901it [2:38:37,  1.46it/s]13911it [2:38:44,  1.46it/s]13921it [2:38:51,  1.47it/s]13931it [2:38:58,  1.46it/s]13941it [2:39:05,  1.46it/s]13951it [2:39:12,  1.46it/s]13961it [2:39:18,  1.46it/s]13971it [2:39:25,  1.46it/s]13981it [2:39:32,  1.46it/s]13991it [2:39:39,  1.46it/s]14001it [2:39:46,  1.46it/s]14011it [2:39:53,  1.46it/s]14021it [2:40:00,  1.46it/s]14031it [2:40:06,  1.46it/s]14041it [2:40:13,  1.46it/s]14051it [2:40:20,  1.47it/s]14061it [2:40:27,  1.47it/s]14071it [2:40:34,  1.46it/s]14081it [2:40:40,  1.47it/s]14091it [2:40:47,  1.46it/s]14101it [2:40:54,  1.46it/s]14111it [2:41:01,  1.46it/s]14121it [2:41:08,  1.46it/s]14131it [2:41:15,  1.47it/s]14141it [2:41:21,  1.47it/s]14151it [2:41:28,  1.46it/s]14161it [2:41:35,  1.46it/s]14171it [2:41:42,  1.46it/s]14181it [2:41:49,  1.46it/s]14191it [2:41:56,  1.46it/s]14201it [2:42:02,  1.47it/s]14211it [2:42:09,  1.47it/s]14221it [2:42:16,  1.46it/s]14231it [2:42:23,  1.47it/s]14241it [2:42:30,  1.46it/s]14251it [2:42:37,  1.46it/s]14261it [2:42:43,  1.46it/s]14271it [2:42:50,  1.46it/s]14281it [2:42:57,  1.46it/s]14291it [2:43:04,  1.46it/s]14301it [2:43:11,  1.46it/s]14311it [2:43:18,  1.46it/s]14321it [2:43:24,  1.46it/s]14331it [2:43:31,  1.46it/s]14341it [2:43:38,  1.46it/s]14351it [2:43:45,  1.46it/s]14361it [2:43:52,  1.46it/s]14371it [2:43:59,  1.46it/s]14381it [2:44:05,  1.46it/s]14391it [2:44:12,  1.46it/s]14401it [2:44:19,  1.46it/s]14411it [2:44:26,  1.46it/s]14421it [2:44:33,  1.46it/s]14431it [2:44:40,  1.46it/s]14441it [2:44:47,  1.46it/s]14451it [2:44:53,  1.46it/s]14461it [2:45:00,  1.46it/s]14471it [2:45:07,  1.46it/s]14481it [2:45:14,  1.46it/s]14491it [2:45:21,  1.46it/s]14501it [2:45:28,  1.46it/s]14511it [2:45:35,  1.46it/s]14521it [2:45:41,  1.46it/s]14531it [2:45:48,  1.46it/s]14541it [2:45:55,  1.46it/s]14551it [2:46:02,  1.46it/s]14561it [2:46:09,  1.46it/s]14571it [2:46:16,  1.46it/s]14581it [2:46:22,  1.46it/s]14591it [2:46:29,  1.46it/s]14601it [2:46:36,  1.46it/s]14611it [2:46:43,  1.46it/s]14621it [2:46:50,  1.46it/s]14631it [2:46:57,  1.46it/s]14641it [2:47:04,  1.46it/s]14651it [2:47:10,  1.46it/s]14661it [2:47:17,  1.46it/s]14671it [2:47:24,  1.46it/s]14681it [2:47:31,  1.46it/s]14691it [2:47:38,  1.46it/s]14701it [2:47:45,  1.46it/s]14711it [2:47:52,  1.46it/s]14721it [2:47:58,  1.46it/s]14731it [2:48:05,  1.46it/s]14741it [2:48:12,  1.46it/s]14751it [2:48:19,  1.46it/s]14761it [2:48:26,  1.46it/s]14771it [2:48:33,  1.46it/s]14781it [2:48:39,  1.46it/s]14791it [2:48:46,  1.46it/s]14801it [2:48:53,  1.46it/s]14811it [2:49:00,  1.46it/s]14821it [2:49:07,  1.46it/s]14831it [2:49:14,  1.46it/s]14841it [2:49:20,  1.46it/s]14851it [2:49:27,  1.46it/s]14861it [2:49:34,  1.46it/s]14871it [2:49:41,  1.46it/s]14881it [2:49:48,  1.46it/s]14891it [2:49:55,  1.46it/s]14901it [2:50:01,  1.46it/s]14911it [2:50:08,  1.46it/s]14921it [2:50:15,  1.46it/s]14931it [2:50:22,  1.46it/s]14941it [2:50:29,  1.46it/s]14951it [2:50:36,  1.46it/s]14961it [2:50:43,  1.46it/s]14971it [2:50:49,  1.46it/s]14981it [2:50:56,  1.46it/s]14991it [2:51:03,  1.46it/s]15001it [2:51:10,  1.46it/s]15011it [2:51:17,  1.46it/s]15021it [2:51:24,  1.46it/s]15031it [2:51:31,  1.46it/s]15041it [2:51:37,  1.46it/s]15051it [2:51:44,  1.46it/s]15061it [2:51:51,  1.46it/s]15071it [2:51:58,  1.46it/s]15081it [2:52:05,  1.46it/s]15091it [2:52:12,  1.46it/s]15101it [2:52:18,  1.46it/s]15111it [2:52:25,  1.46it/s]15121it [2:52:32,  1.46it/s]15131it [2:52:39,  1.46it/s]15141it [2:52:46,  1.46it/s]15151it [2:52:53,  1.46it/s]15161it [2:53:00,  1.46it/s]15171it [2:53:06,  1.46it/s]15181it [2:53:13,  1.46it/s]15191it [2:53:20,  1.46it/s]15201it [2:53:27,  1.46it/s]15211it [2:53:34,  1.46it/s]15221it [2:53:41,  1.46it/s]15231it [2:53:47,  1.46it/s]15241it [2:53:54,  1.46it/s]15251it [2:54:01,  1.46it/s]15261it [2:54:08,  1.46it/s]15271it [2:54:15,  1.46it/s]15281it [2:54:22,  1.46it/s]15291it [2:54:29,  1.46it/s]15301it [2:54:35,  1.46it/s]15311it [2:54:42,  1.46it/s]15321it [2:54:49,  1.46it/s]15331it [2:54:56,  1.46it/s]15341it [2:55:03,  1.46it/s]15351it [2:55:10,  1.46it/s]15361it [2:55:16,  1.46it/s]15371it [2:55:23,  1.46it/s]15381it [2:55:30,  1.46it/s]15391it [2:55:37,  1.46it/s]15401it [2:55:44,  1.46it/s]15411it [2:55:51,  1.46it/s]15421it [2:55:57,  1.46it/s]15431it [2:56:04,  1.46it/s]15441it [2:56:11,  1.46it/s]15451it [2:56:18,  1.46it/s]15461it [2:56:25,  1.46it/s]15471it [2:56:32,  1.46it/s]15481it [2:56:39,  1.46it/s]15491it [2:56:45,  1.46it/s]15501it [2:56:52,  1.46it/s]15511it [2:56:59,  1.46it/s]15521it [2:57:06,  1.46it/s]15531it [2:57:13,  1.46it/s]15541it [2:57:20,  1.46it/s]15551it [2:57:27,  1.46it/s]15561it [2:57:33,  1.46it/s]15571it [2:57:40,  1.46it/s]15581it [2:57:47,  1.46it/s]15591it [2:57:54,  1.46it/s]15601it [2:58:01,  1.46it/s]15611it [2:58:08,  1.46it/s]15621it [2:58:14,  1.46it/s]15631it [2:58:21,  1.46it/s]15641it [2:58:28,  1.46it/s]15651it [2:58:35,  1.46it/s]15661it [2:58:42,  1.46it/s]15671it [2:58:49,  1.46it/s]15681it [2:58:55,  1.46it/s]15691it [2:59:02,  1.46it/s]15701it [2:59:09,  1.46it/s]15711it [2:59:16,  1.46it/s]15721it [2:59:23,  1.46it/s]15731it [2:59:30,  1.46it/s]15741it [2:59:37,  1.46it/s]15751it [2:59:44,  1.46it/s]15761it [2:59:50,  1.46it/s]15771it [2:59:57,  1.46it/s]15781it [3:00:04,  1.46it/s]15791it [3:00:11,  1.46it/s]15801it [3:00:18,  1.46it/s]15811it [3:00:25,  1.46it/s]15821it [3:00:31,  1.46it/s]15831it [3:00:38,  1.46it/s]15841it [3:00:45,  1.46it/s]15851it [3:00:52,  1.46it/s]15861it [3:00:59,  1.46it/s]15871it [3:01:06,  1.46it/s]15881it [3:01:12,  1.46it/s]15891it [3:01:19,  1.46it/s]15901it [3:01:26,  1.46it/s]15911it [3:01:33,  1.46it/s]15921it [3:01:40,  1.46it/s]15931it [3:01:47,  1.46it/s]15941it [3:01:53,  1.46it/s]15951it [3:02:00,  1.46it/s]15961it [3:02:07,  1.46it/s]15971it [3:02:14,  1.46it/s]15981it [3:02:21,  1.46it/s]15991it [3:02:28,  1.46it/s]16001it [3:02:34,  1.46it/s]16011it [3:02:41,  1.46it/s]16021it [3:02:48,  1.46it/s]16031it [3:02:55,  1.46it/s]16041it [3:03:02,  1.46it/s]16051it [3:03:09,  1.46it/s]16061it [3:03:15,  1.46it/s]16071it [3:03:22,  1.46it/s]16081it [3:03:29,  1.46it/s]16091it [3:03:36,  1.46it/s]16101it [3:03:43,  1.46it/s]16111it [3:03:50,  1.46it/s]16121it [3:03:56,  1.46it/s]16131it [3:04:03,  1.46it/s]16141it [3:04:10,  1.46it/s]16151it [3:04:17,  1.46it/s]16161it [3:04:24,  1.46it/s]16171it [3:04:31,  1.46it/s]16181it [3:04:38,  1.46it/s]16191it [3:04:44,  1.46it/s]16201it [3:04:51,  1.46it/s]16211it [3:04:58,  1.46it/s]16221it [3:05:05,  1.46it/s]16231it [3:05:12,  1.46it/s]16241it [3:05:19,  1.46it/s]16251it [3:05:25,  1.46it/s]16261it [3:05:32,  1.46it/s]16271it [3:05:39,  1.46it/s]16281it [3:05:46,  1.46it/s]16291it [3:05:53,  1.46it/s]16301it [3:06:00,  1.46it/s]16311it [3:06:07,  1.46it/s]16321it [3:06:13,  1.46it/s]16331it [3:06:20,  1.46it/s]16341it [3:06:27,  1.46it/s]16351it [3:06:34,  1.46it/s]16361it [3:06:41,  1.46it/s]16371it [3:06:48,  1.46it/s]16381it [3:06:54,  1.46it/s]16391it [3:07:01,  1.47it/s]16401it [3:07:08,  1.47it/s]16411it [3:07:15,  1.46it/s]16421it [3:07:22,  1.46it/s]16431it [3:07:29,  1.46it/s]16441it [3:07:35,  1.46it/s]16451it [3:07:42,  1.46it/s]16461it [3:07:49,  1.46it/s]16471it [3:07:56,  1.46it/s]16481it [3:08:03,  1.46it/s]16491it [3:08:10,  1.46it/s]16501it [3:08:16,  1.46it/s]16511it [3:08:23,  1.46it/s]16521it [3:08:30,  1.46it/s]16531it [3:08:37,  1.46it/s]16541it [3:08:44,  1.46it/s]16551it [3:08:51,  1.46it/s]16561it [3:08:57,  1.46it/s]16571it [3:09:04,  1.46it/s]16581it [3:09:11,  1.46it/s]16591it [3:09:18,  1.46it/s]16601it [3:09:25,  1.46it/s]16611it [3:09:32,  1.46it/s]16621it [3:09:38,  1.46it/s]16631it [3:09:45,  1.46it/s]16641it [3:09:52,  1.46it/s]16651it [3:09:59,  1.46it/s]16661it [3:10:06,  1.46it/s]16671it [3:10:13,  1.46it/s]16681it [3:10:19,  1.46it/s]16691it [3:10:26,  1.46it/s]16701it [3:10:33,  1.46it/s]16711it [3:10:40,  1.46it/s]16721it [3:10:47,  1.46it/s]16731it [3:10:54,  1.46it/s]16741it [3:11:01,  1.46it/s]16751it [3:11:07,  1.46it/s]16761it [3:11:14,  1.46it/s]16771it [3:11:21,  1.46it/s]16781it [3:11:28,  1.46it/s]16791it [3:11:35,  1.46it/s]16801it [3:11:41,  1.46it/s]16811it [3:11:48,  1.46it/s]16821it [3:11:55,  1.46it/s]16831it [3:12:02,  1.46it/s]16841it [3:12:09,  1.46it/s]16851it [3:12:16,  1.46it/s]16861it [3:12:23,  1.46it/s]16871it [3:12:29,  1.46it/s]16881it [3:12:36,  1.46it/s]16891it [3:12:43,  1.47it/s]16901it [3:12:50,  1.46it/s]16911it [3:12:57,  1.46it/s]16921it [3:13:03,  1.46it/s]16931it [3:13:10,  1.46it/s]16941it [3:13:17,  1.46it/s]16951it [3:13:24,  1.46it/s]16961it [3:13:31,  1.46it/s]16971it [3:13:38,  1.46it/s]16981it [3:13:44,  1.46it/s]16991it [3:13:51,  1.46it/s]17001it [3:13:58,  1.46it/s]17011it [3:14:05,  1.46it/s]17021it [3:14:12,  1.46it/s]17031it [3:14:19,  1.46it/s]17041it [3:14:25,  1.46it/s]17051it [3:14:32,  1.46it/s]17061it [3:14:39,  1.46it/s]17071it [3:14:46,  1.46it/s]17081it [3:14:53,  1.46it/s]17091it [3:15:00,  1.46it/s]17101it [3:15:07,  1.46it/s]17111it [3:15:13,  1.46it/s]17121it [3:15:20,  1.46it/s]17131it [3:15:27,  1.46it/s]17141it [3:15:34,  1.46it/s]17151it [3:15:41,  1.46it/s]17161it [3:15:48,  1.46it/s]17171it [3:15:54,  1.46it/s]17181it [3:16:01,  1.46it/s]17191it [3:16:08,  1.46it/s]17201it [3:16:15,  1.46it/s]17211it [3:16:22,  1.46it/s]17221it [3:16:29,  1.46it/s]17231it [3:16:36,  1.46it/s]17241it [3:16:42,  1.46it/s]17251it [3:16:49,  1.46it/s]17261it [3:16:56,  1.46it/s]17271it [3:17:03,  1.46it/s]17281it [3:17:10,  1.46it/s]17291it [3:17:17,  1.46it/s]17301it [3:17:23,  1.46it/s]17311it [3:17:30,  1.46it/s]17321it [3:17:37,  1.46it/s]17331it [3:17:44,  1.46it/s]17341it [3:17:51,  1.46it/s]17351it [3:17:58,  1.46it/s]17361it [3:18:05,  1.46it/s]17371it [3:18:11,  1.46it/s]17381it [3:18:18,  1.46it/s]17391it [3:18:25,  1.46it/s]17401it [3:18:32,  1.46it/s]17411it [3:18:39,  1.46it/s]17421it [3:18:46,  1.46it/s]17431it [3:18:52,  1.46it/s]17441it [3:18:59,  1.46it/s]17451it [3:19:06,  1.46it/s]17461it [3:19:13,  1.46it/s]17471it [3:19:20,  1.46it/s]17481it [3:19:27,  1.46it/s]17491it [3:19:34,  1.46it/s]17501it [3:19:40,  1.46it/s]17511it [3:19:47,  1.46it/s]17521it [3:19:54,  1.46it/s]17531it [3:20:01,  1.46it/s]17541it [3:20:08,  1.46it/s]17551it [3:20:15,  1.46it/s]17561it [3:20:21,  1.46it/s]17571it [3:20:28,  1.46it/s]17581it [3:20:35,  1.46it/s]17591it [3:20:42,  1.46it/s]17601it [3:20:49,  1.46it/s]17611it [3:20:56,  1.46it/s]17621it [3:21:03,  1.46it/s]17631it [3:21:09,  1.46it/s]17641it [3:21:16,  1.46it/s]17651it [3:21:23,  1.46it/s]17661it [3:21:30,  1.46it/s]17671it [3:21:37,  1.46it/s]17681it [3:21:44,  1.46it/s]17691it [3:21:50,  1.46it/s]17701it [3:21:57,  1.46it/s]17711it [3:22:04,  1.47it/s]17721it [3:22:11,  1.46it/s]17731it [3:22:18,  1.46it/s]17741it [3:22:25,  1.46it/s]17751it [3:22:31,  1.46it/s]17761it [3:22:38,  1.46it/s]17771it [3:22:45,  1.46it/s]17781it [3:22:52,  1.46it/s]17791it [3:22:59,  1.46it/s]17801it [3:23:06,  1.46it/s]17811it [3:23:12,  1.46it/s]17821it [3:23:19,  1.46it/s]17831it [3:23:26,  1.46it/s]17841it [3:23:33,  1.46it/s]17851it [3:23:40,  1.46it/s]17861it [3:23:47,  1.46it/s]17871it [3:23:54,  1.46it/s]17881it [3:24:00,  1.46it/s]17891it [3:24:07,  1.46it/s]17901it [3:24:14,  1.46it/s]17911it [3:24:21,  1.46it/s]17921it [3:24:28,  1.46it/s]17931it [3:24:35,  1.46it/s]17941it [3:24:41,  1.46it/s]17951it [3:24:48,  1.46it/s]17961it [3:24:55,  1.46it/s]17971it [3:25:02,  1.46it/s]17981it [3:25:09,  1.46it/s]17991it [3:25:16,  1.46it/s]18001it [3:25:23,  1.46it/s]18011it [3:25:29,  1.46it/s]18021it [3:25:36,  1.46it/s]18031it [3:25:43,  1.46it/s]18041it [3:25:50,  1.46it/s]18051it [3:25:57,  1.46it/s]18061it [3:26:04,  1.46it/s]18071it [3:26:10,  1.46it/s]18081it [3:26:17,  1.46it/s]18091it [3:26:24,  1.46it/s]18101it [3:26:31,  1.46it/s]18111it [3:26:38,  1.46it/s]18121it [3:26:45,  1.46it/s]18131it [3:26:52,  1.46it/s]18141it [3:26:58,  1.46it/s]18151it [3:27:05,  1.46it/s]18161it [3:27:12,  1.46it/s]18171it [3:27:19,  1.46it/s]18181it [3:27:26,  1.46it/s]18191it [3:27:33,  1.46it/s]18201it [3:27:39,  1.46it/s]18211it [3:27:46,  1.46it/s]18221it [3:27:53,  1.46it/s]18231it [3:28:00,  1.46it/s]18241it [3:28:07,  1.46it/s]18251it [3:28:14,  1.46it/s]18261it [3:28:20,  1.46it/s]18271it [3:28:27,  1.46it/s]18281it [3:28:34,  1.46it/s]18291it [3:28:41,  1.46it/s]18301it [3:28:48,  1.46it/s]18311it [3:28:55,  1.46it/s]18321it [3:29:02,  1.46it/s]18331it [3:29:08,  1.46it/s]18341it [3:29:15,  1.46it/s]18351it [3:29:22,  1.46it/s]18361it [3:29:29,  1.46it/s]18371it [3:29:36,  1.46it/s]18381it [3:29:43,  1.46it/s]18391it [3:29:50,  1.46it/s]18401it [3:29:56,  1.46it/s]18411it [3:30:03,  1.46it/s]18421it [3:30:10,  1.46it/s]18431it [3:30:17,  1.46it/s]18441it [3:30:24,  1.46it/s]18451it [3:30:31,  1.46it/s]18461it [3:30:37,  1.46it/s]18471it [3:30:44,  1.46it/s]18481it [3:30:51,  1.46it/s]18491it [3:30:58,  1.46it/s]18501it [3:31:05,  1.46it/s]18511it [3:31:12,  1.46it/s]18521it [3:31:18,  1.46it/s]18531it [3:31:25,  1.46it/s]18541it [3:31:32,  1.46it/s]18551it [3:31:39,  1.46it/s]18561it [3:31:46,  1.46it/s]18571it [3:31:53,  1.46it/s]18581it [3:31:59,  1.46it/s]18591it [3:32:06,  1.46it/s]18601it [3:32:13,  1.46it/s]18611it [3:32:20,  1.46it/s]18621it [3:32:27,  1.46it/s]18631it [3:32:34,  1.46it/s]18641it [3:32:41,  1.46it/s]18651it [3:32:47,  1.46it/s]18661it [3:32:54,  1.46it/s]18671it [3:33:01,  1.46it/s]18681it [3:33:08,  1.46it/s]18691it [3:33:15,  1.46it/s]18701it [3:33:22,  1.46it/s]18711it [3:33:28,  1.46it/s]18721it [3:33:35,  1.46it/s]18731it [3:33:42,  1.46it/s]18741it [3:33:49,  1.46it/s]18751it [3:33:56,  1.46it/s]18761it [3:34:03,  1.46it/s]18771it [3:34:09,  1.46it/s]18781it [3:34:16,  1.46it/s]18791it [3:34:23,  1.46it/s]18801it [3:34:30,  1.46it/s]18811it [3:34:37,  1.46it/s]18821it [3:34:44,  1.46it/s]18831it [3:34:51,  1.46it/s]18841it [3:34:57,  1.46it/s]18851it [3:35:04,  1.46it/s]18861it [3:35:11,  1.46it/s]18871it [3:35:18,  1.46it/s]18881it [3:35:25,  1.46it/s]18891it [3:35:32,  1.46it/s]18901it [3:35:38,  1.46it/s]18911it [3:35:45,  1.46it/s]18921it [3:35:52,  1.46it/s]18931it [3:35:59,  1.46it/s]18941it [3:36:06,  1.46it/s]18951it [3:36:13,  1.46it/s]18961it [3:36:19,  1.46it/s]18971it [3:36:26,  1.46it/s]18981it [3:36:33,  1.46it/s]18991it [3:36:40,  1.46it/s]19001it [3:36:47,  1.46it/s]19011it [3:36:54,  1.46it/s]19021it [3:37:00,  1.46it/s]19031it [3:37:07,  1.46it/s]19041it [3:37:14,  1.46it/s]19051it [3:37:21,  1.47it/s]19061it [3:37:28,  1.47it/s]19071it [3:37:35,  1.47it/s]19081it [3:37:41,  1.47it/s]19091it [3:37:48,  1.47it/s]19101it [3:37:55,  1.46it/s]19111it [3:38:02,  1.46it/s]19121it [3:38:09,  1.46it/s]19131it [3:38:15,  1.47it/s]19141it [3:38:22,  1.46it/s]19151it [3:38:29,  1.46it/s]19161it [3:38:36,  1.46it/s]19171it [3:38:43,  1.47it/s]19181it [3:38:50,  1.47it/s]19191it [3:38:56,  1.47it/s]19201it [3:39:03,  1.46it/s]19211it [3:39:10,  1.46it/s]19221it [3:39:17,  1.46it/s]19231it [3:39:24,  1.46it/s]19241it [3:39:31,  1.46it/s]19251it [3:39:37,  1.46it/s]19261it [3:39:44,  1.46it/s]19271it [3:39:51,  1.46it/s]19281it [3:39:58,  1.46it/s]19291it [3:40:05,  1.46it/s]19301it [3:40:12,  1.46it/s]19311it [3:40:19,  1.46it/s]19321it [3:40:25,  1.46it/s]19331it [3:40:32,  1.46it/s]19341it [3:40:39,  1.46it/s]19351it [3:40:46,  1.46it/s]19361it [3:40:53,  1.46it/s]19371it [3:41:00,  1.46it/s]19381it [3:41:06,  1.46it/s]19391it [3:41:13,  1.46it/s]19401it [3:41:20,  1.46it/s]19411it [3:41:27,  1.46it/s]19421it [3:41:34,  1.46it/s]19431it [3:41:41,  1.46it/s]19441it [3:41:48,  1.46it/s]19451it [3:41:54,  1.46it/s]19461it [3:42:01,  1.46it/s]19471it [3:42:08,  1.46it/s]19481it [3:42:15,  1.46it/s]19491it [3:42:22,  1.46it/s]19501it [3:42:29,  1.46it/s]19511it [3:42:35,  1.46it/s]19521it [3:42:42,  1.46it/s]19531it [3:42:49,  1.46it/s]19541it [3:42:56,  1.46it/s]19551it [3:43:03,  1.46it/s]19561it [3:43:10,  1.46it/s]19571it [3:43:17,  1.46it/s]19581it [3:43:23,  1.46it/s]19591it [3:43:30,  1.46it/s]19601it [3:43:37,  1.46it/s]19611it [3:43:44,  1.46it/s]19621it [3:43:51,  1.46it/s]19631it [3:43:58,  1.46it/s]19641it [3:44:05,  1.46it/s]19651it [3:44:11,  1.46it/s]19661it [3:44:18,  1.46it/s]19671it [3:44:25,  1.46it/s]19681it [3:44:32,  1.46it/s]19691it [3:44:39,  1.46it/s]19701it [3:44:46,  1.46it/s]19711it [3:44:52,  1.46it/s]19721it [3:44:59,  1.46it/s]19731it [3:45:06,  1.46it/s]19741it [3:45:13,  1.46it/s]19751it [3:45:20,  1.46it/s]19761it [3:45:27,  1.46it/s]19771it [3:45:34,  1.46it/s]19781it [3:45:40,  1.46it/s]19791it [3:45:47,  1.46it/s]19801it [3:45:54,  1.46it/s]19811it [3:46:01,  1.46it/s]19821it [3:46:08,  1.46it/s]19831it [3:46:15,  1.46it/s]19841it [3:46:22,  1.46it/s]19851it [3:46:28,  1.46it/s]19861it [3:46:35,  1.46it/s]19871it [3:46:42,  1.46it/s]19881it [3:46:49,  1.46it/s]19891it [3:46:56,  1.46it/s]19901it [3:47:03,  1.46it/s]19911it [3:47:09,  1.46it/s]19921it [3:47:16,  1.46it/s]19931it [3:47:23,  1.46it/s]19941it [3:47:30,  1.46it/s]19951it [3:47:37,  1.46it/s]19961it [3:47:43,  1.47it/s]19971it [3:47:50,  1.46it/s]19981it [3:47:57,  1.46it/s]19991it [3:48:04,  1.46it/s]20001it [3:48:11,  1.46it/s]20011it [3:48:18,  1.46it/s]20021it [3:48:25,  1.46it/s]20031it [3:48:31,  1.46it/s]20041it [3:48:38,  1.46it/s]20051it [3:48:45,  1.46it/s]20061it [3:48:52,  1.46it/s]20071it [3:48:59,  1.46it/s]20081it [3:49:06,  1.46it/s]20091it [3:49:12,  1.46it/s]20101it [3:49:19,  1.46it/s]20111it [3:49:26,  1.46it/s]20121it [3:49:33,  1.46it/s]20131it [3:49:40,  1.46it/s]20141it [3:49:47,  1.46it/s]20151it [3:49:53,  1.46it/s]20161it [3:50:00,  1.46it/s]20171it [3:50:07,  1.46it/s]20181it [3:50:14,  1.46it/s]20191it [3:50:21,  1.46it/s]20201it [3:50:28,  1.46it/s]20211it [3:50:34,  1.47it/s]20221it [3:50:41,  1.46it/s]20231it [3:50:48,  1.46it/s]20241it [3:50:55,  1.46it/s]20251it [3:51:02,  1.46it/s]20261it [3:51:09,  1.46it/s]20271it [3:51:16,  1.46it/s]20281it [3:51:22,  1.46it/s]20291it [3:51:29,  1.46it/s]20301it [3:51:36,  1.46it/s]20311it [3:51:43,  1.46it/s]20321it [3:51:50,  1.46it/s]20331it [3:51:57,  1.46it/s]20341it [3:52:03,  1.46it/s]20351it [3:52:10,  1.46it/s]20361it [3:52:17,  1.46it/s]20371it [3:52:24,  1.46it/s]20381it [3:52:31,  1.46it/s]20391it [3:52:38,  1.46it/s]20401it [3:52:44,  1.46it/s]20411it [3:52:51,  1.46it/s]20421it [3:52:58,  1.46it/s]20431it [3:53:05,  1.46it/s]20441it [3:53:12,  1.46it/s]20451it [3:53:19,  1.46it/s]20461it [3:53:26,  1.46it/s]20471it [3:53:32,  1.46it/s]20481it [3:53:39,  1.46it/s]20491it [3:53:46,  1.46it/s]20501it [3:53:53,  1.46it/s]20511it [3:54:00,  1.46it/s]20521it [3:54:07,  1.46it/s]20531it [3:54:13,  1.46it/s]20541it [3:54:20,  1.46it/s]20551it [3:54:27,  1.46it/s]20561it [3:54:34,  1.46it/s]20571it [3:54:41,  1.46it/s]20581it [3:54:48,  1.46it/s]20591it [3:54:54,  1.46it/s]20601it [3:55:01,  1.46it/s]20611it [3:55:08,  1.46it/s]20621it [3:55:15,  1.46it/s]20631it [3:55:22,  1.46it/s]20641it [3:55:29,  1.46it/s]20651it [3:55:35,  1.46it/s]20661it [3:55:42,  1.46it/s]20671it [3:55:49,  1.46it/s]20681it [3:55:56,  1.46it/s]20691it [3:56:03,  1.46it/s]20701it [3:56:10,  1.46it/s]20711it [3:56:16,  1.46it/s]20721it [3:56:23,  1.46it/s]20731it [3:56:30,  1.46it/s]20741it [3:56:37,  1.46it/s]20751it [3:56:44,  1.46it/s]20761it [3:56:51,  1.46it/s]20771it [3:56:57,  1.46it/s]20781it [3:57:04,  1.46it/s]20791it [3:57:11,  1.46it/s]20801it [3:57:18,  1.46it/s]20811it [3:57:25,  1.46it/s]20821it [3:57:32,  1.46it/s]20831it [3:57:38,  1.46it/s]20841it [3:57:45,  1.47it/s]20851it [3:57:52,  1.46it/s]20861it [3:57:59,  1.46it/s]20871it [3:58:06,  1.46it/s]20881it [3:58:13,  1.46it/s]20891it [3:58:19,  1.46it/s]20901it [3:58:26,  1.47it/s]20911it [3:58:33,  1.46it/s]20921it [3:58:40,  1.47it/s]20931it [3:58:47,  1.47it/s]20941it [3:58:54,  1.47it/s]20951it [3:59:00,  1.46it/s]20961it [3:59:07,  1.46it/s]20971it [3:59:14,  1.46it/s]20981it [3:59:21,  1.46it/s]20991it [3:59:28,  1.47it/s]21001it [3:59:35,  1.47it/s]21011it [3:59:41,  1.46it/s]21021it [3:59:48,  1.47it/s]21031it [3:59:55,  1.47it/s]21041it [4:00:02,  1.47it/s]21051it [4:00:09,  1.46it/s]21061it [4:00:15,  1.46it/s]21071it [4:00:22,  1.46it/s]21081it [4:00:29,  1.46it/s]21091it [4:00:36,  1.47it/s]21101it [4:00:43,  1.46it/s]21111it [4:00:50,  1.46it/s]21121it [4:00:56,  1.46it/s]21131it [4:01:03,  1.46it/s]21141it [4:01:10,  1.46it/s]21151it [4:01:17,  1.47it/s]21161it [4:01:24,  1.46it/s]21171it [4:01:31,  1.46it/s]21181it [4:01:37,  1.46it/s]21191it [4:01:44,  1.46it/s]21201it [4:01:51,  1.46it/s]21211it [4:01:58,  1.46it/s]21221it [4:02:05,  1.47it/s]21231it [4:02:12,  1.47it/s]21241it [4:02:18,  1.46it/s]21251it [4:02:25,  1.46it/s]21261it [4:02:32,  1.46it/s]21271it [4:02:39,  1.46it/s]21281it [4:02:46,  1.46it/s]21291it [4:02:53,  1.46it/s]21301it [4:02:59,  1.46it/s]21311it [4:03:06,  1.46it/s]21321it [4:03:13,  1.46it/s]21331it [4:03:20,  1.46it/s]21341it [4:03:27,  1.46it/s]21351it [4:03:34,  1.46it/s]21361it [4:03:40,  1.46it/s]21371it [4:03:47,  1.47it/s]21381it [4:03:54,  1.46it/s]21391it [4:04:01,  1.47it/s]21401it [4:04:08,  1.46it/s]21411it [4:04:14,  1.46it/s]21421it [4:04:21,  1.46it/s]21431it [4:04:28,  1.46it/s]21441it [4:04:35,  1.46it/s]21451it [4:04:42,  1.46it/s]21461it [4:04:49,  1.46it/s]21471it [4:04:56,  1.46it/s]21481it [4:05:02,  1.46it/s]21491it [4:05:09,  1.46it/s]21501it [4:05:16,  1.46it/s]21511it [4:05:23,  1.47it/s]21521it [4:05:30,  1.47it/s]21531it [4:05:36,  1.46it/s]21541it [4:05:43,  1.47it/s]21551it [4:05:50,  1.46it/s]21561it [4:05:57,  1.47it/s]21571it [4:06:04,  1.46it/s]21581it [4:06:11,  1.46it/s]21591it [4:06:17,  1.46it/s]21601it [4:06:24,  1.46it/s]21611it [4:06:31,  1.46it/s]21621it [4:06:38,  1.47it/s]21631it [4:06:45,  1.46it/s]21641it [4:06:52,  1.46it/s]21651it [4:06:58,  1.46it/s]21661it [4:07:05,  1.46it/s]21671it [4:07:12,  1.46it/s]21681it [4:07:19,  1.46it/s]21691it [4:07:26,  1.46it/s]21701it [4:07:33,  1.46it/s]21711it [4:07:39,  1.46it/s]21721it [4:07:46,  1.46it/s]21731it [4:07:53,  1.46it/s]21741it [4:08:00,  1.46it/s]21751it [4:08:07,  1.46it/s]21761it [4:08:14,  1.46it/s]21771it [4:08:21,  1.46it/s]21781it [4:08:27,  1.46it/s]21791it [4:08:34,  1.46it/s]21801it [4:08:41,  1.46it/s]21811it [4:08:48,  1.46it/s]21821it [4:08:55,  1.46it/s]21831it [4:09:02,  1.46it/s]21841it [4:09:08,  1.46it/s]21851it [4:09:15,  1.46it/s]21861it [4:09:22,  1.46it/s]21871it [4:09:29,  1.46it/s]21881it [4:09:36,  1.46it/s]21891it [4:09:43,  1.46it/s]21901it [4:09:49,  1.46it/s]21911it [4:09:56,  1.46it/s]21921it [4:10:03,  1.46it/s]21931it [4:10:10,  1.46it/s]21941it [4:10:17,  1.46it/s]21951it [4:10:24,  1.46it/s]21961it [4:10:30,  1.46it/s]21971it [4:10:37,  1.46it/s]21981it [4:10:44,  1.46it/s]21991it [4:10:51,  1.46it/s]22001it [4:10:58,  1.47it/s]22011it [4:11:05,  1.46it/s]22021it [4:11:11,  1.46it/s]22031it [4:11:18,  1.46it/s]22041it [4:11:25,  1.47it/s]22051it [4:11:32,  1.46it/s]22061it [4:11:39,  1.46it/s]22071it [4:11:46,  1.46it/s]22081it [4:11:52,  1.46it/s]22091it [4:11:59,  1.46it/s]22101it [4:12:06,  1.46it/s]22111it [4:12:13,  1.46it/s]22121it [4:12:20,  1.46it/s]22131it [4:12:27,  1.46it/s]22141it [4:12:33,  1.46it/s]22151it [4:12:40,  1.46it/s]22161it [4:12:47,  1.46it/s]22171it [4:12:54,  1.46it/s]22181it [4:13:01,  1.46it/s]22191it [4:13:08,  1.46it/s]22201it [4:13:15,  1.46it/s]22211it [4:13:21,  1.46it/s]22221it [4:13:28,  1.46it/s]22231it [4:13:35,  1.46it/s]22241it [4:13:42,  1.46it/s]22251it [4:13:49,  1.46it/s]22261it [4:13:56,  1.46it/s]22271it [4:14:02,  1.46it/s]22281it [4:14:09,  1.46it/s]22291it [4:14:16,  1.46it/s]22301it [4:14:23,  1.46it/s]22311it [4:14:30,  1.46it/s]22321it [4:14:37,  1.46it/s]22331it [4:14:44,  1.46it/s]22341it [4:14:50,  1.46it/s]22351it [4:14:57,  1.46it/s]22361it [4:15:04,  1.46it/s]22371it [4:15:11,  1.46it/s]22381it [4:15:18,  1.46it/s]22391it [4:15:25,  1.46it/s]22401it [4:15:32,  1.46it/s]22411it [4:15:38,  1.46it/s]22421it [4:15:45,  1.46it/s]22431it [4:15:52,  1.46it/s]22441it [4:15:59,  1.46it/s]22451it [4:16:06,  1.46it/s]22461it [4:16:13,  1.46it/s]22471it [4:16:19,  1.46it/s]22481it [4:16:26,  1.46it/s]22491it [4:16:33,  1.46it/s]22501it [4:16:40,  1.46it/s]22511it [4:16:47,  1.46it/s]22521it [4:16:54,  1.46it/s]22531it [4:17:00,  1.46it/s]22541it [4:17:07,  1.46it/s]22551it [4:17:14,  1.46it/s]22561it [4:17:21,  1.46it/s]22571it [4:17:28,  1.46it/s]22581it [4:17:35,  1.46it/s]22591it [4:17:42,  1.46it/s]22601it [4:17:48,  1.46it/s]22611it [4:17:55,  1.46it/s]22621it [4:18:02,  1.46it/s]22631it [4:18:09,  1.46it/s]22641it [4:18:16,  1.46it/s]22651it [4:18:23,  1.46it/s]22661it [4:18:29,  1.46it/s]22671it [4:18:36,  1.46it/s]22681it [4:18:43,  1.46it/s]22691it [4:18:50,  1.46it/s]22701it [4:18:57,  1.46it/s]22711it [4:19:04,  1.46it/s]22721it [4:19:11,  1.46it/s]22731it [4:19:17,  1.46it/s]22741it [4:19:24,  1.46it/s]22751it [4:19:31,  1.46it/s]22761it [4:19:38,  1.46it/s]22771it [4:19:45,  1.46it/s]22781it [4:19:52,  1.46it/s]22791it [4:19:58,  1.46it/s]22801it [4:20:05,  1.46it/s]22811it [4:20:12,  1.46it/s]22821it [4:20:19,  1.46it/s]22831it [4:20:26,  1.46it/s]22841it [4:20:33,  1.46it/s]22851it [4:20:39,  1.46it/s]22861it [4:20:46,  1.47it/s]22871it [4:20:53,  1.47it/s]22881it [4:21:00,  1.46it/s]22891it [4:21:07,  1.46it/s]22901it [4:21:14,  1.46it/s]22911it [4:21:20,  1.46it/s]22921it [4:21:27,  1.46it/s]22931it [4:21:34,  1.46it/s]22941it [4:21:41,  1.46it/s]22951it [4:21:48,  1.46it/s]22961it [4:21:55,  1.46it/s]22971it [4:22:01,  1.46it/s]22981it [4:22:08,  1.46it/s]22991it [4:22:15,  1.46it/s]23001it [4:22:22,  1.46it/s]23011it [4:22:29,  1.46it/s]23021it [4:22:36,  1.46it/s]23031it [4:22:42,  1.46it/s]23041it [4:22:49,  1.46it/s]23051it [4:22:56,  1.46it/s]23061it [4:23:03,  1.46it/s]23071it [4:23:10,  1.46it/s]23081it [4:23:17,  1.46it/s]23091it [4:23:23,  1.46it/s]23101it [4:23:30,  1.46it/s]23111it [4:23:37,  1.46it/s]23121it [4:23:44,  1.46it/s]23131it [4:23:51,  1.46it/s]23141it [4:23:58,  1.46it/s]23151it [4:24:05,  1.46it/s]23161it [4:24:11,  1.46it/s]23171it [4:24:18,  1.46it/s]23181it [4:24:25,  1.46it/s]23191it [4:24:32,  1.46it/s]23201it [4:24:39,  1.46it/s]23211it [4:24:46,  1.46it/s]23221it [4:24:52,  1.46it/s]23231it [4:24:59,  1.46it/s]23241it [4:25:06,  1.46it/s]23251it [4:25:13,  1.46it/s]23261it [4:25:20,  1.46it/s]23271it [4:25:27,  1.46it/s]23281it [4:25:34,  1.46it/s]23291it [4:25:40,  1.46it/s]23301it [4:25:47,  1.46it/s]23311it [4:25:54,  1.46it/s]23321it [4:26:01,  1.46it/s]23331it [4:26:08,  1.46it/s]23341it [4:26:14,  1.46it/s]23351it [4:26:21,  1.47it/s]23361it [4:26:28,  1.47it/s]23371it [4:26:35,  1.46it/s]23381it [4:26:42,  1.47it/s]23391it [4:26:49,  1.46it/s]23401it [4:26:55,  1.46it/s]23411it [4:27:02,  1.46it/s]23421it [4:27:09,  1.46it/s]23431it [4:27:16,  1.46it/s]23441it [4:27:23,  1.46it/s]23451it [4:27:30,  1.46it/s]23461it [4:27:37,  1.46it/s]23471it [4:27:43,  1.46it/s]23481it [4:27:50,  1.46it/s]23491it [4:27:57,  1.46it/s]23501it [4:28:04,  1.46it/s]23511it [4:28:11,  1.46it/s]23521it [4:28:18,  1.46it/s]23531it [4:28:24,  1.46it/s]23541it [4:28:31,  1.46it/s]23551it [4:28:38,  1.46it/s]23561it [4:28:45,  1.46it/s]23571it [4:28:52,  1.46it/s]23581it [4:28:59,  1.46it/s]23591it [4:29:06,  1.46it/s]23601it [4:29:12,  1.46it/s]23611it [4:29:19,  1.46it/s]23621it [4:29:26,  1.46it/s]23631it [4:29:33,  1.46it/s]23641it [4:29:40,  1.46it/s]23651it [4:29:47,  1.46it/s]23661it [4:29:53,  1.46it/s]23671it [4:30:00,  1.46it/s]23681it [4:30:07,  1.46it/s]23691it [4:30:14,  1.46it/s]23701it [4:30:21,  1.46it/s]23711it [4:30:28,  1.46it/s]23721it [4:30:34,  1.46it/s]23731it [4:30:41,  1.46it/s]23741it [4:30:48,  1.46it/s]23751it [4:30:55,  1.46it/s]23761it [4:31:02,  1.46it/s]23771it [4:31:09,  1.46it/s]23781it [4:31:16,  1.46it/s]23791it [4:31:22,  1.46it/s]23801it [4:31:29,  1.46it/s]23811it [4:31:36,  1.46it/s]23821it [4:31:43,  1.46it/s]23831it [4:31:50,  1.46it/s]23841it [4:31:57,  1.46it/s]23851it [4:32:04,  1.46it/s]23861it [4:32:10,  1.46it/s]23871it [4:32:17,  1.46it/s]23881it [4:32:24,  1.46it/s]23891it [4:32:31,  1.46it/s]23901it [4:32:38,  1.46it/s]23911it [4:32:45,  1.46it/s]23921it [4:32:51,  1.46it/s]23931it [4:32:58,  1.46it/s]23941it [4:33:05,  1.46it/s]23951it [4:33:12,  1.46it/s]23961it [4:33:19,  1.46it/s]23971it [4:33:26,  1.46it/s]23981it [4:33:32,  1.46it/s]23991it [4:33:39,  1.46it/s]24001it [4:33:46,  1.46it/s]24011it [4:33:53,  1.46it/s]24021it [4:34:00,  1.46it/s]24031it [4:34:07,  1.46it/s]24041it [4:34:13,  1.46it/s]24051it [4:34:20,  1.46it/s]24061it [4:34:27,  1.46it/s]24071it [4:34:34,  1.46it/s]24081it [4:34:41,  1.46it/s]24091it [4:34:48,  1.46it/s]24101it [4:34:55,  1.46it/s]24111it [4:35:01,  1.46it/s]24121it [4:35:08,  1.46it/s]24131it [4:35:15,  1.46it/s]24141it [4:35:22,  1.46it/s]24151it [4:35:29,  1.46it/s]24161it [4:35:36,  1.46it/s]24171it [4:35:42,  1.46it/s]24181it [4:35:49,  1.46it/s]24191it [4:35:56,  1.46it/s]24201it [4:36:03,  1.46it/s]24211it [4:36:10,  1.46it/s]24221it [4:36:17,  1.46it/s]24231it [4:36:23,  1.46it/s]24241it [4:36:30,  1.46it/s]24251it [4:36:37,  1.46it/s]24261it [4:36:44,  1.46it/s]24271it [4:36:51,  1.46it/s]24281it [4:36:58,  1.46it/s]24291it [4:37:05,  1.46it/s]24301it [4:37:11,  1.46it/s]24311it [4:37:18,  1.46it/s]24321it [4:37:25,  1.46it/s]24331it [4:37:32,  1.46it/s]24341it [4:37:39,  1.46it/s]24351it [4:37:46,  1.46it/s]24361it [4:37:52,  1.46it/s]24371it [4:37:59,  1.46it/s]24381it [4:38:06,  1.46it/s]24391it [4:38:13,  1.46it/s]24401it [4:38:20,  1.46it/s]24411it [4:38:27,  1.46it/s]24421it [4:38:33,  1.46it/s]24431it [4:38:40,  1.46it/s]24441it [4:38:47,  1.46it/s]24451it [4:38:54,  1.46it/s]24461it [4:39:01,  1.46it/s]24471it [4:39:08,  1.46it/s]24481it [4:39:15,  1.46it/s]24491it [4:39:21,  1.46it/s]24501it [4:39:28,  1.46it/s]24511it [4:39:35,  1.46it/s]24521it [4:39:42,  1.46it/s]24531it [4:39:49,  1.46it/s]24541it [4:39:56,  1.46it/s]24551it [4:40:02,  1.46it/s]24561it [4:40:09,  1.46it/s]24571it [4:40:16,  1.46it/s]24581it [4:40:23,  1.46it/s]24591it [4:40:30,  1.46it/s]24601it [4:40:37,  1.46it/s]24611it [4:40:44,  1.46it/s]24621it [4:40:50,  1.46it/s]24631it [4:40:57,  1.46it/s]24641it [4:41:04,  1.46it/s]24651it [4:41:11,  1.46it/s]24661it [4:41:18,  1.46it/s]24671it [4:41:25,  1.46it/s]24681it [4:41:31,  1.46it/s]24691it [4:41:38,  1.46it/s]24701it [4:41:45,  1.46it/s]24711it [4:41:52,  1.46it/s]24721it [4:41:59,  1.46it/s]24731it [4:42:06,  1.46it/s]24741it [4:42:12,  1.46it/s]24751it [4:42:19,  1.46it/s]24761it [4:42:26,  1.46it/s]24771it [4:42:33,  1.46it/s]24781it [4:42:40,  1.46it/s]24791it [4:42:47,  1.46it/s]24801it [4:42:53,  1.46it/s]24811it [4:43:00,  1.46it/s]24821it [4:43:07,  1.46it/s]24831it [4:43:14,  1.46it/s]24841it [4:43:21,  1.46it/s]24851it [4:43:28,  1.46it/s]24861it [4:43:35,  1.46it/s]24871it [4:43:41,  1.46it/s]24881it [4:43:48,  1.46it/s]24891it [4:43:55,  1.46it/s]24901it [4:44:02,  1.46it/s]24911it [4:44:09,  1.46it/s]24921it [4:44:16,  1.46it/s]24931it [4:44:22,  1.46it/s]24941it [4:44:29,  1.46it/s]24951it [4:44:36,  1.46it/s]24961it [4:44:43,  1.46it/s]24971it [4:44:50,  1.46it/s]24981it [4:44:57,  1.46it/s]24991it [4:45:04,  1.46it/s]25001it [4:45:10,  1.46it/s]25011it [4:45:17,  1.46it/s]25021it [4:45:24,  1.46it/s]25031it [4:45:31,  1.46it/s]25041it [4:45:38,  1.46it/s]25051it [4:45:45,  1.46it/s]25061it [4:45:51,  1.46it/s]25071it [4:45:58,  1.46it/s]25081it [4:46:05,  1.46it/s]25091it [4:46:12,  1.46it/s]25101it [4:46:19,  1.46it/s]25111it [4:46:26,  1.46it/s]25121it [4:46:33,  1.46it/s]25131it [4:46:39,  1.46it/s]25141it [4:46:46,  1.46it/s]25151it [4:46:53,  1.46it/s]25161it [4:47:00,  1.46it/s]25171it [4:47:07,  1.46it/s]25181it [4:47:14,  1.46it/s]25191it [4:47:20,  1.46it/s]25201it [4:47:27,  1.46it/s]25211it [4:47:34,  1.46it/s]25221it [4:47:41,  1.46it/s]25231it [4:47:48,  1.46it/s]25241it [4:47:55,  1.46it/s]25251it [4:48:02,  1.46it/s]25261it [4:48:08,  1.46it/s]25271it [4:48:15,  1.46it/s]25281it [4:48:22,  1.46it/s]25291it [4:48:29,  1.46it/s]25301it [4:48:36,  1.46it/s]25311it [4:48:43,  1.46it/s]25321it [4:48:50,  1.46it/s]25331it [4:48:56,  1.46it/s]25341it [4:49:03,  1.46it/s]25351it [4:49:10,  1.46it/s]25361it [4:49:17,  1.46it/s]25371it [4:49:24,  1.47it/s]25381it [4:49:30,  1.46it/s]25391it [4:49:37,  1.46it/s]25401it [4:49:44,  1.46it/s]25411it [4:49:51,  1.46it/s]25421it [4:49:58,  1.46it/s]25431it [4:50:05,  1.46it/s]25441it [4:50:12,  1.46it/s]25451it [4:50:18,  1.46it/s]25461it [4:50:25,  1.46it/s]25471it [4:50:32,  1.46it/s]25481it [4:50:39,  1.46it/s]25491it [4:50:46,  1.46it/s]25501it [4:50:53,  1.46it/s]25511it [4:50:59,  1.46it/s]25521it [4:51:06,  1.46it/s]25531it [4:51:13,  1.46it/s]25541it [4:51:20,  1.46it/s]25551it [4:51:27,  1.46it/s]25561it [4:51:34,  1.46it/s]25571it [4:51:41,  1.46it/s]25581it [4:51:47,  1.46it/s]25591it [4:51:54,  1.46it/s]25601it [4:52:01,  1.46it/s]25611it [4:52:08,  1.46it/s]25621it [4:52:15,  1.46it/s]25631it [4:52:22,  1.46it/s]25641it [4:52:28,  1.46it/s]25651it [4:52:35,  1.46it/s]25661it [4:52:42,  1.46it/s]25671it [4:52:49,  1.46it/s]25681it [4:52:56,  1.46it/s]25691it [4:53:03,  1.46it/s]25701it [4:53:10,  1.46it/s]25711it [4:53:16,  1.46it/s]25721it [4:53:23,  1.46it/s]25731it [4:53:30,  1.46it/s]25741it [4:53:37,  1.46it/s]25751it [4:53:44,  1.46it/s]25761it [4:53:51,  1.46it/s]25771it [4:53:57,  1.46it/s]25781it [4:54:04,  1.46it/s]25791it [4:54:11,  1.46it/s]25801it [4:54:18,  1.46it/s]25811it [4:54:25,  1.46it/s]25821it [4:54:32,  1.46it/s]25831it [4:54:38,  1.46it/s]25841it [4:54:45,  1.46it/s]25851it [4:54:52,  1.46it/s]25861it [4:54:59,  1.46it/s]25871it [4:55:06,  1.46it/s]25881it [4:55:13,  1.46it/s]25891it [4:55:20,  1.46it/s]25901it [4:55:26,  1.46it/s]25911it [4:55:33,  1.46it/s]25921it [4:55:40,  1.46it/s]25931it [4:55:47,  1.46it/s]25941it [4:55:54,  1.46it/s]25951it [4:56:01,  1.46it/s]25961it [4:56:07,  1.46it/s]25971it [4:56:14,  1.46it/s]25981it [4:56:21,  1.46it/s]25991it [4:56:28,  1.46it/s]26001it [4:56:35,  1.46it/s]26011it [4:56:42,  1.46it/s]26021it [4:56:48,  1.46it/s]26031it [4:56:55,  1.46it/s]26041it [4:57:02,  1.46it/s]26051it [4:57:09,  1.46it/s]26061it [4:57:16,  1.46it/s]26071it [4:57:23,  1.46it/s]26081it [4:57:30,  1.46it/s]26091it [4:57:36,  1.46it/s]26101it [4:57:43,  1.46it/s]26111it [4:57:50,  1.46it/s]26121it [4:57:57,  1.46it/s]26131it [4:58:04,  1.46it/s]26141it [4:58:11,  1.46it/s]26151it [4:58:17,  1.46it/s]26161it [4:58:24,  1.46it/s]26171it [4:58:31,  1.46it/s]26181it [4:58:38,  1.46it/s]26191it [4:58:45,  1.46it/s]26201it [4:58:52,  1.46it/s]26211it [4:58:59,  1.46it/s]26221it [4:59:05,  1.46it/s]26231it [4:59:12,  1.46it/s]26241it [4:59:19,  1.46it/s]26251it [4:59:26,  1.46it/s]26261it [4:59:33,  1.46it/s]26271it [4:59:40,  1.46it/s]26281it [4:59:47,  1.46it/s]26291it [4:59:53,  1.46it/s]26301it [5:00:00,  1.46it/s]26311it [5:00:07,  1.46it/s]26321it [5:00:14,  1.46it/s]26331it [5:00:21,  1.46it/s]26341it [5:00:28,  1.46it/s]26351it [5:00:34,  1.46it/s]26361it [5:00:41,  1.46it/s]26371it [5:00:48,  1.46it/s]26381it [5:00:55,  1.46it/s]26391it [5:01:02,  1.46it/s]26401it [5:01:09,  1.46it/s]26411it [5:01:15,  1.46it/s]26421it [5:01:22,  1.46it/s]26431it [5:01:29,  1.46it/s]26441it [5:01:36,  1.46it/s]26451it [5:01:43,  1.46it/s]26461it [5:01:50,  1.46it/s]26471it [5:01:56,  1.46it/s]26481it [5:02:03,  1.46it/s]26491it [5:02:10,  1.46it/s]26501it [5:02:17,  1.46it/s]26511it [5:02:24,  1.46it/s]26521it [5:02:31,  1.46it/s]26531it [5:02:38,  1.46it/s]26541it [5:02:44,  1.46it/s]26551it [5:02:51,  1.46it/s]26561it [5:02:58,  1.46it/s]26571it [5:03:05,  1.46it/s]26581it [5:03:12,  1.46it/s]26591it [5:03:19,  1.46it/s]26601it [5:03:25,  1.46it/s]26611it [5:03:32,  1.46it/s]26621it [5:03:39,  1.46it/s]26631it [5:03:46,  1.46it/s]26641it [5:03:53,  1.46it/s]26651it [5:04:00,  1.46it/s]26661it [5:04:06,  1.46it/s]26671it [5:04:13,  1.46it/s]26681it [5:04:20,  1.46it/s]26691it [5:04:27,  1.46it/s]26701it [5:04:34,  1.46it/s]26711it [5:04:41,  1.46it/s]26721it [5:04:48,  1.46it/s]26731it [5:04:54,  1.46it/s]26741it [5:05:01,  1.46it/s]26751it [5:05:08,  1.46it/s]26761it [5:05:15,  1.46it/s]26771it [5:05:22,  1.46it/s]26781it [5:05:29,  1.46it/s]26791it [5:05:36,  1.46it/s]26801it [5:05:43,  1.46it/s]26811it [5:05:49,  1.46it/s]26821it [5:05:56,  1.46it/s]26831it [5:06:03,  1.46it/s]26841it [5:06:10,  1.46it/s]26851it [5:06:17,  1.46it/s]26861it [5:06:24,  1.46it/s]26871it [5:06:30,  1.46it/s]26881it [5:06:37,  1.46it/s]26891it [5:06:44,  1.46it/s]26901it [5:06:51,  1.46it/s]26911it [5:06:58,  1.46it/s]26921it [5:07:05,  1.46it/s]26931it [5:07:12,  1.46it/s]26941it [5:07:18,  1.46it/s]26951it [5:07:25,  1.46it/s]26961it [5:07:32,  1.46it/s]26971it [5:07:39,  1.46it/s]26981it [5:07:46,  1.46it/s]26991it [5:07:53,  1.46it/s]27001it [5:08:00,  1.46it/s]27011it [5:08:06,  1.46it/s]27021it [5:08:13,  1.46it/s]27031it [5:08:20,  1.46it/s]27041it [5:08:27,  1.46it/s]27051it [5:08:34,  1.46it/s]27061it [5:08:41,  1.46it/s]27071it [5:08:48,  1.46it/s]27081it [5:08:54,  1.46it/s]27091it [5:09:01,  1.46it/s]27101it [5:09:08,  1.46it/s]27111it [5:09:15,  1.46it/s]27121it [5:09:22,  1.46it/s]27131it [5:09:29,  1.46it/s]27141it [5:09:36,  1.46it/s]27151it [5:09:42,  1.46it/s]27161it [5:09:49,  1.46it/s]27171it [5:09:56,  1.46it/s]27181it [5:10:03,  1.46it/s]27191it [5:10:10,  1.46it/s]27201it [5:10:17,  1.46it/s]27211it [5:10:24,  1.46it/s]27221it [5:10:30,  1.46it/s]27231it [5:10:37,  1.46it/s]27241it [5:10:44,  1.46it/s]27251it [5:10:51,  1.46it/s]27261it [5:10:58,  1.46it/s]27271it [5:11:05,  1.46it/s]27281it [5:11:11,  1.46it/s]27291it [5:11:18,  1.46it/s]27301it [5:11:25,  1.46it/s]27311it [5:11:32,  1.46it/s]27321it [5:11:39,  1.46it/s]27331it [5:11:46,  1.46it/s]27341it [5:11:53,  1.46it/s]27351it [5:11:59,  1.46it/s]27361it [5:12:06,  1.46it/s]27371it [5:12:13,  1.46it/s]27381it [5:12:20,  1.46it/s]27391it [5:12:27,  1.46it/s]27401it [5:12:34,  1.46it/s]27411it [5:12:40,  1.46it/s]27421it [5:12:47,  1.46it/s]27431it [5:12:54,  1.46it/s]27441it [5:13:01,  1.46it/s]27451it [5:13:08,  1.46it/s]27461it [5:13:15,  1.46it/s]27471it [5:13:21,  1.46it/s]27481it [5:13:28,  1.46it/s]27491it [5:13:35,  1.46it/s]27501it [5:13:42,  1.46it/s]27511it [5:13:49,  1.46it/s]27521it [5:13:56,  1.46it/s]27531it [5:14:03,  1.46it/s]27541it [5:14:09,  1.46it/s]27551it [5:14:16,  1.46it/s]27561it [5:14:23,  1.46it/s]27571it [5:14:30,  1.46it/s]27581it [5:14:37,  1.46it/s]27591it [5:14:44,  1.46it/s]27601it [5:14:50,  1.46it/s]27611it [5:14:57,  1.46it/s]27621it [5:15:04,  1.46it/s]27631it [5:15:11,  1.46it/s]27641it [5:15:18,  1.46it/s]27651it [5:15:25,  1.46it/s]27661it [5:15:31,  1.46it/s]27671it [5:15:38,  1.46it/s]27681it [5:15:45,  1.46it/s]27691it [5:15:52,  1.46it/s]27701it [5:15:59,  1.46it/s]27711it [5:16:06,  1.46it/s]27721it [5:16:13,  1.46it/s]27731it [5:16:19,  1.46it/s]27741it [5:16:26,  1.47it/s]27751it [5:16:33,  1.47it/s]27761it [5:16:40,  1.46it/s]27771it [5:16:47,  1.46it/s]27781it [5:16:53,  1.46it/s]27791it [5:17:00,  1.46it/s]27801it [5:17:07,  1.46it/s]27811it [5:17:14,  1.46it/s]27821it [5:17:21,  1.46it/s]27831it [5:17:28,  1.46it/s]27841it [5:17:35,  1.46it/s]27851it [5:17:41,  1.46it/s]27861it [5:17:48,  1.46it/s]27871it [5:17:55,  1.46it/s]27881it [5:18:02,  1.46it/s]27891it [5:18:09,  1.46it/s]27901it [5:18:16,  1.46it/s]27911it [5:18:23,  1.46it/s]27921it [5:18:29,  1.46it/s]27931it [5:18:36,  1.46it/s]27941it [5:18:43,  1.46it/s]27951it [5:18:50,  1.46it/s]27961it [5:18:57,  1.46it/s]27971it [5:19:04,  1.46it/s]27981it [5:19:10,  1.46it/s]27991it [5:19:17,  1.46it/s]28001it [5:19:24,  1.46it/s]28011it [5:19:31,  1.46it/s]28021it [5:19:38,  1.46it/s]28031it [5:19:45,  1.46it/s]28041it [5:19:52,  1.46it/s]28051it [5:19:58,  1.46it/s]28061it [5:20:05,  1.46it/s]28071it [5:20:12,  1.46it/s]28081it [5:20:19,  1.46it/s]28091it [5:20:26,  1.46it/s]28101it [5:20:33,  1.46it/s]28111it [5:20:40,  1.46it/s]28121it [5:20:46,  1.46it/s]28131it [5:20:53,  1.46it/s]28141it [5:21:00,  1.46it/s]28151it [5:21:07,  1.46it/s]28161it [5:21:14,  1.46it/s]28171it [5:21:21,  1.46it/s]28181it [5:21:27,  1.46it/s]28191it [5:21:34,  1.46it/s]28201it [5:21:41,  1.46it/s]28211it [5:21:48,  1.46it/s]28221it [5:21:55,  1.46it/s]28231it [5:22:02,  1.46it/s]28241it [5:22:09,  1.46it/s]28251it [5:22:16,  1.46it/s]28261it [5:22:22,  1.46it/s]28271it [5:22:29,  1.46it/s]28281it [5:22:36,  1.46it/s]28291it [5:22:43,  1.46it/s]28301it [5:22:50,  1.46it/s]28311it [5:22:57,  1.46it/s]28321it [5:23:03,  1.46it/s]28331it [5:23:10,  1.46it/s]28341it [5:23:17,  1.46it/s]28351it [5:23:24,  1.46it/s]28361it [5:23:31,  1.46it/s]28371it [5:23:38,  1.46it/s]28381it [5:23:45,  1.46it/s]28391it [5:23:51,  1.46it/s]28401it [5:23:58,  1.46it/s]28411it [5:24:05,  1.46it/s]28421it [5:24:12,  1.46it/s]28431it [5:24:19,  1.46it/s]28441it [5:24:26,  1.46it/s]28451it [5:24:32,  1.46it/s]28461it [5:24:39,  1.46it/s]28471it [5:24:46,  1.46it/s]28481it [5:24:53,  1.46it/s]28491it [5:25:00,  1.46it/s]28501it [5:25:07,  1.46it/s]28511it [5:25:14,  1.46it/s]28521it [5:25:20,  1.46it/s]28531it [5:25:27,  1.46it/s]28541it [5:25:34,  1.46it/s]28551it [5:25:41,  1.46it/s]28561it [5:25:48,  1.46it/s]28571it [5:25:55,  1.46it/s]28581it [5:26:01,  1.46it/s]28591it [5:26:08,  1.46it/s]28601it [5:26:15,  1.46it/s]28611it [5:26:22,  1.46it/s]28621it [5:26:29,  1.46it/s]28631it [5:26:36,  1.46it/s]28641it [5:26:43,  1.46it/s]28651it [5:26:49,  1.46it/s]28661it [5:26:56,  1.46it/s]28671it [5:27:03,  1.46it/s]28681it [5:27:10,  1.46it/s]28691it [5:27:17,  1.46it/s]28701it [5:27:24,  1.46it/s]28711it [5:27:30,  1.46it/s]28721it [5:27:37,  1.46it/s]28731it [5:27:44,  1.46it/s]28741it [5:27:51,  1.46it/s]28751it [5:27:58,  1.46it/s]28761it [5:28:05,  1.46it/s]28771it [5:28:12,  1.46it/s]28781it [5:28:18,  1.46it/s]28791it [5:28:25,  1.46it/s]28801it [5:28:32,  1.46it/s]28811it [5:28:39,  1.46it/s]28821it [5:28:46,  1.46it/s]28831it [5:28:53,  1.46it/s]28841it [5:29:00,  1.46it/s]28851it [5:29:06,  1.46it/s]28861it [5:29:13,  1.46it/s]28871it [5:29:20,  1.46it/s]28881it [5:29:27,  1.46it/s]28891it [5:29:34,  1.46it/s]28901it [5:29:41,  1.46it/s]28911it [5:29:47,  1.46it/s]28921it [5:29:54,  1.46it/s]28931it [5:30:01,  1.46it/s]28941it [5:30:08,  1.46it/s]28951it [5:30:15,  1.46it/s]28961it [5:30:22,  1.46it/s]28971it [5:30:28,  1.46it/s]28981it [5:30:35,  1.46it/s]28991it [5:30:42,  1.46it/s]29001it [5:30:49,  1.46it/s]29011it [5:30:56,  1.46it/s]29021it [5:31:03,  1.46it/s]29031it [5:31:10,  1.46it/s]29041it [5:31:16,  1.46it/s]29051it [5:31:23,  1.46it/s]29061it [5:31:30,  1.46it/s]29071it [5:31:37,  1.46it/s]29081it [5:31:44,  1.46it/s]29091it [5:31:51,  1.46it/s]29101it [5:31:57,  1.46it/s]29111it [5:32:04,  1.46it/s]29121it [5:32:11,  1.46it/s]29131it [5:32:18,  1.46it/s]29141it [5:32:25,  1.46it/s]29151it [5:32:32,  1.46it/s]29161it [5:32:38,  1.46it/s]29171it [5:32:45,  1.46it/s]29181it [5:32:52,  1.46it/s]29191it [5:32:59,  1.46it/s]29201it [5:33:06,  1.46it/s]29211it [5:33:13,  1.46it/s]29221it [5:33:19,  1.46it/s]29231it [5:33:26,  1.46it/s]29241it [5:33:33,  1.46it/s]29251it [5:33:40,  1.47it/s]29261it [5:33:47,  1.46it/s]29271it [5:33:54,  1.47it/s]29281it [5:34:00,  1.46it/s]29291it [5:34:07,  1.46it/s]29301it [5:34:14,  1.46it/s]29311it [5:34:21,  1.46it/s]29321it [5:34:28,  1.46it/s]29331it [5:34:35,  1.46it/s]29341it [5:34:41,  1.46it/s]29351it [5:34:48,  1.46it/s]29361it [5:34:55,  1.46it/s]29371it [5:35:02,  1.46it/s]29381it [5:35:09,  1.46it/s]29391it [5:35:16,  1.46it/s]29401it [5:35:22,  1.46it/s]29411it [5:35:29,  1.46it/s]29421it [5:35:36,  1.46it/s]29431it [5:35:43,  1.46it/s]29441it [5:35:50,  1.46it/s]29451it [5:35:57,  1.46it/s]29461it [5:36:04,  1.46it/s]29471it [5:36:10,  1.46it/s]29481it [5:36:17,  1.46it/s]29491it [5:36:24,  1.46it/s]29501it [5:36:31,  1.46it/s]29511it [5:36:38,  1.46it/s]29521it [5:36:45,  1.46it/s]29531it [5:36:52,  1.46it/s]29541it [5:36:58,  1.46it/s]29551it [5:37:05,  1.46it/s]29561it [5:37:12,  1.46it/s]29571it [5:37:19,  1.46it/s]29581it [5:37:26,  1.46it/s]29591it [5:37:33,  1.46it/s]29601it [5:37:39,  1.46it/s]29611it [5:37:46,  1.46it/s]29621it [5:37:53,  1.46it/s]29631it [5:38:00,  1.46it/s]29641it [5:38:07,  1.46it/s]29651it [5:38:14,  1.46it/s]29661it [5:38:21,  1.46it/s]29671it [5:38:27,  1.46it/s]29681it [5:38:34,  1.46it/s]29691it [5:38:41,  1.46it/s]29701it [5:38:48,  1.46it/s]29711it [5:38:55,  1.46it/s]29721it [5:39:02,  1.46it/s]29731it [5:39:09,  1.46it/s]29741it [5:39:15,  1.46it/s]29751it [5:39:22,  1.46it/s]29761it [5:39:29,  1.46it/s]29771it [5:39:36,  1.46it/s]29781it [5:39:43,  1.46it/s]29791it [5:39:50,  1.46it/s]29801it [5:39:56,  1.46it/s]29811it [5:40:03,  1.46it/s]29821it [5:40:10,  1.46it/s]29831it [5:40:17,  1.46it/s]29841it [5:40:24,  1.46it/s]29851it [5:40:31,  1.46it/s]29861it [5:40:37,  1.46it/s]29871it [5:40:44,  1.46it/s]29881it [5:40:51,  1.46it/s]29891it [5:40:58,  1.46it/s]29901it [5:41:05,  1.46it/s]29911it [5:41:12,  1.46it/s]29921it [5:41:18,  1.46it/s]29931it [5:41:25,  1.46it/s]29941it [5:41:32,  1.46it/s]29951it [5:41:39,  1.46it/s]29961it [5:41:46,  1.46it/s]29971it [5:41:53,  1.46it/s]29981it [5:41:59,  1.46it/s]29991it [5:42:06,  1.46it/s]30001it [5:42:13,  1.46it/s]30011it [5:42:20,  1.46it/s]30021it [5:42:27,  1.46it/s]30031it [5:42:34,  1.46it/s]30041it [5:42:40,  1.46it/s]30051it [5:42:47,  1.46it/s]30061it [5:42:54,  1.46it/s]30071it [5:43:01,  1.46it/s]30081it [5:43:08,  1.46it/s]30091it [5:43:15,  1.47it/s]30101it [5:43:21,  1.46it/s]30111it [5:43:28,  1.46it/s]30121it [5:43:35,  1.46it/s]30131it [5:43:42,  1.46it/s]30141it [5:43:49,  1.46it/s]30151it [5:43:56,  1.46it/s]30161it [5:44:02,  1.46it/s]30171it [5:44:09,  1.47it/s]30181it [5:44:16,  1.47it/s]30191it [5:44:23,  1.47it/s]30201it [5:44:30,  1.47it/s]30211it [5:44:37,  1.46it/s]30221it [5:44:43,  1.46it/s]30231it [5:44:50,  1.46it/s]30241it [5:44:57,  1.46it/s]30251it [5:45:04,  1.46it/s]30261it [5:45:11,  1.46it/s]30271it [5:45:18,  1.46it/s]30281it [5:45:24,  1.46it/s]30291it [5:45:31,  1.46it/s]30301it [5:45:38,  1.46it/s]30311it [5:45:45,  1.46it/s]30321it [5:45:52,  1.46it/s]30331it [5:45:59,  1.46it/s]30341it [5:46:06,  1.46it/s]30351it [5:46:12,  1.46it/s]30361it [5:46:19,  1.46it/s]30371it [5:46:26,  1.46it/s]30381it [5:46:33,  1.46it/s]30391it [5:46:40,  1.46it/s]30401it [5:46:47,  1.46it/s]30411it [5:46:54,  1.46it/s]30421it [5:47:00,  1.46it/s]30431it [5:47:07,  1.46it/s]30441it [5:47:14,  1.47it/s]30451it [5:47:21,  1.46it/s]30461it [5:47:28,  1.46it/s]30471it [5:47:35,  1.46it/s]30481it [5:47:41,  1.46it/s]30491it [5:47:48,  1.46it/s]30501it [5:47:55,  1.46it/s]30511it [5:48:02,  1.46it/s]30521it [5:48:09,  1.46it/s]30531it [5:48:16,  1.46it/s]30541it [5:48:22,  1.46it/s]30551it [5:48:29,  1.46it/s]30561it [5:48:36,  1.46it/s]30571it [5:48:43,  1.46it/s]30581it [5:48:50,  1.46it/s]30591it [5:48:57,  1.46it/s]30601it [5:49:04,  1.46it/s]30611it [5:49:10,  1.46it/s]30621it [5:49:17,  1.46it/s]30631it [5:49:24,  1.46it/s]30641it [5:49:31,  1.46it/s]30651it [5:49:38,  1.46it/s]30661it [5:49:45,  1.46it/s]30671it [5:49:52,  1.46it/s]30681it [5:49:58,  1.46it/s]30691it [5:50:05,  1.46it/s]30701it [5:50:12,  1.46it/s]30711it [5:50:19,  1.46it/s]30721it [5:50:26,  1.46it/s]30731it [5:50:33,  1.46it/s]30741it [5:50:40,  1.46it/s]30751it [5:50:46,  1.46it/s]30761it [5:50:53,  1.46it/s]30771it [5:51:00,  1.46it/s]30781it [5:51:07,  1.46it/s]30791it [5:51:14,  1.46it/s]30801it [5:51:21,  1.46it/s]30811it [5:51:27,  1.46it/s]30821it [5:51:34,  1.46it/s]30831it [5:51:41,  1.46it/s]30841it [5:51:48,  1.46it/s]30851it [5:51:55,  1.46it/s]30861it [5:52:02,  1.46it/s]30871it [5:52:09,  1.46it/s]30881it [5:52:15,  1.46it/s]30891it [5:52:22,  1.46it/s]30901it [5:52:29,  1.46it/s]30911it [5:52:36,  1.46it/s]30921it [5:52:43,  1.46it/s]30931it [5:52:50,  1.46it/s]30941it [5:52:56,  1.46it/s]30951it [5:53:03,  1.46it/s]30961it [5:53:10,  1.46it/s]30971it [5:53:17,  1.46it/s]30981it [5:53:24,  1.46it/s]30991it [5:53:31,  1.46it/s]31001it [5:53:37,  1.46it/s]31011it [5:53:44,  1.46it/s]31021it [5:53:51,  1.46it/s]31031it [5:53:58,  1.46it/s]31041it [5:54:05,  1.46it/s]31051it [5:54:12,  1.46it/s]31061it [5:54:19,  1.46it/s]31071it [5:54:25,  1.46it/s]31081it [5:54:32,  1.46it/s]31091it [5:54:39,  1.46it/s]31101it [5:54:46,  1.46it/s]31111it [5:54:53,  1.46it/s]31121it [5:55:00,  1.46it/s]31131it [5:55:07,  1.46it/s]31141it [5:55:13,  1.46it/s]31151it [5:55:20,  1.46it/s]31161it [5:55:27,  1.46it/s]31171it [5:55:34,  1.46it/s]31181it [5:55:41,  1.46it/s]31191it [5:55:48,  1.45it/s]31201it [5:55:55,  1.45it/s]31211it [5:56:02,  1.46it/s]31221it [5:56:08,  1.46it/s]31231it [5:56:15,  1.46it/s]31241it [5:56:22,  1.46it/s]31251it [5:56:29,  1.46it/s]31261it [5:56:36,  1.46it/s]31271it [5:56:43,  1.46it/s]31281it [5:56:49,  1.46it/s]31291it [5:56:56,  1.46it/s]31301it [5:57:03,  1.46it/s]31311it [5:57:10,  1.46it/s]31321it [5:57:17,  1.46it/s]31331it [5:57:24,  1.46it/s]31341it [5:57:31,  1.46it/s]31351it [5:57:37,  1.46it/s]31361it [5:57:44,  1.46it/s]31371it [5:57:51,  1.46it/s]31381it [5:57:58,  1.46it/s]31391it [5:58:05,  1.46it/s]31401it [5:58:12,  1.46it/s]31411it [5:58:19,  1.46it/s]31421it [5:58:25,  1.46it/s]31431it [5:58:32,  1.46it/s]31441it [5:58:39,  1.46it/s]31451it [5:58:46,  1.46it/s]31461it [5:58:53,  1.46it/s]31471it [5:59:00,  1.46it/s]31481it [5:59:06,  1.46it/s]31491it [5:59:13,  1.46it/s]31501it [5:59:20,  1.46it/s]31511it [5:59:27,  1.46it/s]31521it [5:59:34,  1.46it/s]31531it [5:59:41,  1.46it/s]31541it [5:59:47,  1.46it/s]31551it [5:59:54,  1.46it/s]31561it [6:00:01,  1.46it/s]31571it [6:00:08,  1.46it/s]31581it [6:00:15,  1.46it/s]31591it [6:00:22,  1.46it/s]31601it [6:00:28,  1.46it/s]31611it [6:00:35,  1.46it/s]31621it [6:00:42,  1.46it/s]31631it [6:00:49,  1.46it/s]31641it [6:00:56,  1.46it/s]31651it [6:01:03,  1.46it/s]31661it [6:01:10,  1.46it/s]31671it [6:01:16,  1.46it/s]31681it [6:01:23,  1.46it/s]31691it [6:01:30,  1.46it/s]31701it [6:01:37,  1.46it/s]31711it [6:01:44,  1.46it/s]31721it [6:01:51,  1.46it/s]31731it [6:01:58,  1.46it/s]31741it [6:02:04,  1.46it/s]31751it [6:02:11,  1.46it/s]31761it [6:02:18,  1.46it/s]31771it [6:02:25,  1.46it/s]31781it [6:02:32,  1.46it/s]31791it [6:02:39,  1.46it/s]31801it [6:02:45,  1.46it/s]31811it [6:02:52,  1.46it/s]31821it [6:02:59,  1.46it/s]31831it [6:03:06,  1.46it/s]31841it [6:03:13,  1.46it/s]31851it [6:03:20,  1.46it/s]31861it [6:03:27,  1.46it/s]31871it [6:03:33,  1.46it/s]31881it [6:03:40,  1.46it/s]31891it [6:03:47,  1.46it/s]31901it [6:03:54,  1.46it/s]31911it [6:04:01,  1.46it/s]31921it [6:04:08,  1.46it/s]31931it [6:04:14,  1.46it/s]31941it [6:04:21,  1.46it/s]31951it [6:04:28,  1.46it/s]31961it [6:04:35,  1.46it/s]31971it [6:04:42,  1.46it/s]31981it [6:04:49,  1.46it/s]31991it [6:04:55,  1.46it/s]32001it [6:05:02,  1.46it/s]32011it [6:05:09,  1.46it/s]32021it [6:05:16,  1.46it/s]32031it [6:05:23,  1.46it/s]32041it [6:05:30,  1.46it/s]32051it [6:05:36,  1.46it/s]32061it [6:05:43,  1.46it/s]32071it [6:05:50,  1.46it/s]32081it [6:05:57,  1.46it/s]32091it [6:06:04,  1.46it/s]32101it [6:06:11,  1.46it/s]32111it [6:06:18,  1.46it/s]32121it [6:06:24,  1.46it/s]32131it [6:06:31,  1.46it/s]32141it [6:06:38,  1.46it/s]32151it [6:06:45,  1.46it/s]32161it [6:06:52,  1.46it/s]32171it [6:06:59,  1.46it/s]32181it [6:07:06,  1.46it/s]32191it [6:07:12,  1.46it/s]32201it [6:07:19,  1.46it/s]32211it [6:07:26,  1.46it/s]32221it [6:07:33,  1.46it/s]32231it [6:07:40,  1.46it/s]32241it [6:07:47,  1.46it/s]32251it [6:07:53,  1.46it/s]32261it [6:08:00,  1.46it/s]32271it [6:08:07,  1.46it/s]32281it [6:08:14,  1.46it/s]32291it [6:08:21,  1.46it/s]32301it [6:08:28,  1.46it/s]32311it [6:08:35,  1.46it/s]32321it [6:08:41,  1.46it/s]32331it [6:08:48,  1.46it/s]32341it [6:08:55,  1.46it/s]32351it [6:09:02,  1.46it/s]32361it [6:09:09,  1.46it/s]32371it [6:09:16,  1.46it/s]32381it [6:09:22,  1.46it/s]32391it [6:09:29,  1.46it/s]32401it [6:09:36,  1.46it/s]32411it [6:09:43,  1.46it/s][06/27/2021 16:03:36 WARNING] From /mnt/semester4/SuperPoint/superpoint/experiment.py:81: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+experiment.py:153: YAMLLoadWarning: calling yaml.load() without Loader=... is deprecated, as the default Loader is unsafe. Please read https://msg.pyyaml.org/load for full details.
+  config = yaml.load(f)
+[06/27/2021 16:46:30 INFO] Running command TRAIN
+[06/27/2021 16:46:30 WARNING] From experiment.py:57: The name tf.set_random_seed is deprecated. Please use tf.compat.v1.set_random_seed instead.
+
+[06/27/2021 16:46:30 INFO] Number of GPUs detected: 1
+[06/27/2021 16:46:31 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.read_file is deprecated. Please use tf.io.read_file instead.
+
+[06/27/2021 16:46:31 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.image.resize_images is deprecated. Please use tf.image.resize instead.
+
+[06/27/2021 16:46:31 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.image.resize_image_with_crop_or_pad is deprecated. Please use tf.image.resize_with_crop_or_pad instead.
+
+[06/27/2021 16:46:32 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/utils/pipeline.py:96: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+[06/27/2021 16:46:32 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/utils/pipeline.py:98: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+[06/27/2021 16:46:32 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/pm.py:91: py_func (from tensorflow.python.ops.script_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+tf.py_func is deprecated in TF V2. Instead, there are two
+    options available in V2.
+    - tf.py_function takes a python function which manipulates tf eager
+    tensors instead of numpy arrays. It's easy to convert a tf eager tensor to
+    an ndarray (just call tensor.numpy()) but having access to eager tensors
+    means `tf.py_function`s can use accelerators such as GPUs as well as
+    being differentiable using a gradient tape.
+    - tf.numpy_function maintains the semantics of the deprecated tf.py_func
+    (it is not differentiable, and manipulates numpy arrays). It drops the
+    stateful argument making all functions stateful.
+    
+[06/27/2021 16:46:32 WARNING] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+[06/27/2021 16:46:32 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.truncated_normal is deprecated. Please use tf.random.truncated_normal instead.
+
+[06/27/2021 16:46:32 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.random_uniform is deprecated. Please use tf.random.uniform instead.
+
+[06/27/2021 16:46:32 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.lin_space is deprecated. Please use tf.linspace instead.
+
+[06/27/2021 16:46:32 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.matrix_solve_ls is deprecated. Please use tf.linalg.lstsq instead.
+
+[06/27/2021 16:46:34 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.matrix_inverse is deprecated. Please use tf.linalg.inv instead.
+
+[06/27/2021 16:46:34 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/ops/array_ops.py:1475: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+/mnt/semester4/SuperPoint/superpoint/datasets/pm.py:58: UserWarning: Seed 668654409 from outer graph might be getting used by function Dataset_map_<lambda>, if the random op has not been provided any seed. Explicitly set the seed in the function if this is not the intended behavior.
+  fn, num_parallel_calls=config['num_parallel_calls'])
+[06/27/2021 16:46:34 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.random_shuffle is deprecated. Please use tf.random.shuffle instead.
+
+[06/27/2021 16:46:34 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/autograph/converters/directives.py:119: The name tf.random_normal is deprecated. Please use tf.random.normal instead.
+
+2021-06-27 16:46:35.247938: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-06-27 16:46:36.224380: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 16:46:36.224596: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 16:46:36.225317: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 16:46:36.226066: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 16:46:36.226258: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 16:46:36.227098: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 16:46:36.227732: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 16:46:36.230151: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 16:46:36.231542: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+[06/27/2021 16:46:37 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/base_dataset.py:109: DatasetV1.make_one_shot_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_one_shot_iterator(dataset)`.
+[06/27/2021 16:46:39 WARNING] From /mnt/semester4/SuperPoint/superpoint/datasets/base_dataset.py:111: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2021-06-27 16:46:39.605295: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2021-06-27 16:46:39.609808: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2445410000 Hz
+2021-06-27 16:46:39.610103: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560d01eacfd0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-06-27 16:46:39.610120: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-06-27 16:46:39.704673: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x560d01907430 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-06-27 16:46:39.704702: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA Tesla T4, Compute Capability 7.5
+2021-06-27 16:46:39.705439: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 16:46:39.705490: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 16:46:39.705507: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 16:46:39.705516: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 16:46:39.705524: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 16:46:39.705536: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 16:46:39.705548: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 16:46:39.705560: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 16:46:39.706822: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 16:46:39.706852: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 16:46:39.707809: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1180] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-06-27 16:46:39.707824: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1186]      0 
+2021-06-27 16:46:39.707828: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1199] 0:   N 
+2021-06-27 16:46:39.709159: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1325] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14259 MB memory) -> physical GPU (device: 0, name: NVIDIA Tesla T4, pci bus id: 0001:00:00.0, compute capability: 7.5)
+[06/27/2021 16:46:39 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:105: The name tf.get_default_graph is deprecated. Please use tf.compat.v1.get_default_graph instead.
+
+[06/27/2021 16:46:39 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:121: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+[06/27/2021 16:46:39 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:121: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+[06/27/2021 16:46:39 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:232: DatasetV1.output_shapes (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.data.get_output_shapes(dataset)`.
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:242: DatasetV1.output_types (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.compat.v1.data.get_output_types(dataset)`.
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:241: DatasetV1.make_initializable_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_initializable_iterator(dataset)`.
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:257: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:258: The name tf.data.Iterator is deprecated. Please use tf.compat.v1.data.Iterator instead.
+
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:153: The name tf.train.replica_device_setter is deprecated. Please use tf.compat.v1.train.replica_device_setter instead.
+
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:10: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.keras.layers.Conv2D` instead.
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/anaconda3/envs/superpoint/lib/python3.7/site-packages/tensorflow_core/python/layers/convolutional.py:424: Layer.apply (from tensorflow.python.keras.engine.base_layer) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `layer.__call__` method instead.
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:14: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.BatchNormalization instead.  In particular, `tf.control_dependencies(tf.GraphKeys.UPDATE_OPS)` should not be used (consult the `tf.keras.layers.batch_normalization` documentation).
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/backbones/vgg.py:28: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.MaxPooling2D instead.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:24: The name tf.depth_to_space is deprecated. Please use tf.compat.v1.depth_to_space instead.
+
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:46: The name tf.image.resize_bilinear is deprecated. Please use tf.compat.v1.image.resize_bilinear instead.
+
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:57: The name tf.space_to_depth is deprecated. Please use tf.compat.v1.space_to_depth instead.
+
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:70: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/utils.py:140: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:161: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:161: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+[06/27/2021 16:46:40 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:163: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+[06/27/2021 16:46:41 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:210: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:266: The name tf.summary.merge_all is deprecated. Please use tf.compat.v1.summary.merge_all instead.
+
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 INFO] Scale of 0 disables regularizer.
+[06/27/2021 16:46:41 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:276: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+2021-06-27 16:46:41.851168: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Found device 0 with properties: 
+name: NVIDIA Tesla T4 major: 7 minor: 5 memoryClockRate(GHz): 1.59
+pciBusID: 0001:00:00.0
+2021-06-27 16:46:41.851230: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.0
+2021-06-27 16:46:41.851248: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 16:46:41.851264: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10.0
+2021-06-27 16:46:41.851278: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10.0
+2021-06-27 16:46:41.851292: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 16:46:41.851301: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10.0
+2021-06-27 16:46:41.851311: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 16:46:41.852585: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1767] Adding visible gpu devices: 0
+2021-06-27 16:46:41.852614: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1180] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-06-27 16:46:41.852623: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1186]      0 
+2021-06-27 16:46:41.852627: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1199] 0:   N 
+2021-06-27 16:46:41.853955: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1325] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 14259 MB memory) -> physical GPU (device: 0, name: NVIDIA Tesla T4, pci bus id: 0001:00:00.0, compute capability: 7.5)
+[06/27/2021 16:46:47 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:287: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+[06/27/2021 16:46:47 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:288: The name tf.local_variables_initializer is deprecated. Please use tf.compat.v1.local_variables_initializer instead.
+
+[06/27/2021 16:46:49 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:295: The name tf.summary.FileWriter is deprecated. Please use tf.compat.v1.summary.FileWriter instead.
+
+[06/27/2021 16:46:49 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:298: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+[06/27/2021 16:46:49 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:308: The name tf.logging.info is deprecated. Please use tf.compat.v1.logging.info instead.
+
+[06/27/2021 16:46:49 INFO] Start training
+2021-06-27 16:46:52.069616: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 16:46:52.305747: I tensorflow/core/kernels/cuda_solvers.cc:159] Creating CudaSolver handles for stream 0x560d1341b670
+2021-06-27 16:46:52.305844: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10.0
+2021-06-27 16:46:52.318402: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-06-27 16:46:52.820561: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10.0
+2021-06-27 16:46:53.183568: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Not found: ./bin/ptxas not found
+Relying on driver to perform ptx compilation. This message will be only logged once.
+[06/27/2021 16:48:32 INFO] Iter    0: loss 10.3943, precision 0.0028, recall 0.0622
+[06/27/2021 16:48:32 WARNING] From /mnt/semester4/SuperPoint/superpoint/models/base_model.py:325: The name tf.Summary is deprecated. Please use tf.compat.v1.Summary instead.
+
+[06/27/2021 17:05:44 INFO] Iter 5000: loss 5.7007, precision 0.0058, recall 0.1138
+[06/27/2021 17:22:02 INFO] Iter 10000: loss 3.9101, precision 0.0266, recall 0.2203
+[06/27/2021 17:38:12 INFO] Iter 15000: loss 2.9426, precision 0.0982, recall 0.2743
+[06/27/2021 17:54:23 INFO] Iter 20000: loss 3.4453, precision 0.1526, recall 0.3114
+[06/27/2021 18:10:33 INFO] Iter 25000: loss 1.5170, precision 0.1850, recall 0.3345
+[06/27/2021 18:26:42 INFO] Iter 30000: loss 2.0953, precision 0.1943, recall 0.3555
+[06/27/2021 18:42:52 INFO] Iter 35000: loss 2.1703, precision 0.2154, recall 0.3745
+[06/27/2021 18:59:02 INFO] Iter 40000: loss 1.5437, precision 0.2181, recall 0.3897
+[06/27/2021 19:15:12 INFO] Iter 45000: loss 1.7785, precision 0.2357, recall 0.4034
+[06/27/2021 19:31:21 INFO] Iter 50000: loss 1.9270, precision 0.2377, recall 0.4088
+[06/27/2021 19:47:31 INFO] Iter 55000: loss 2.0634, precision 0.2371, recall 0.4158
+[06/27/2021 20:03:41 INFO] Iter 60000: loss 2.1321, precision 0.2572, recall 0.4237
+[06/27/2021 20:19:51 INFO] Iter 65000: loss 2.3797, precision 0.2596, recall 0.4355
+[06/27/2021 20:36:01 INFO] Iter 70000: loss 1.3507, precision 0.2460, recall 0.4303
+[06/27/2021 20:52:11 INFO] Iter 75000: loss 1.7541, precision 0.2480, recall 0.4300
+[06/27/2021 21:08:21 INFO] Iter 80000: loss 1.9539, precision 0.2416, recall 0.4268
+[06/27/2021 21:24:30 INFO] Iter 85000: loss 1.2837, precision 0.2670, recall 0.4445
+[06/27/2021 21:40:39 INFO] Iter 90000: loss 2.1019, precision 0.2559, recall 0.4412
+[06/27/2021 21:56:49 INFO] Iter 95000: loss 1.6375, precision 0.2753, recall 0.4467
+[06/27/2021 22:12:58 INFO] Iter 100000: loss 1.6421, precision 0.2627, recall 0.4420
+[06/27/2021 22:29:08 INFO] Iter 105000: loss 1.9353, precision 0.2448, recall 0.4451
+[06/27/2021 22:45:18 INFO] Iter 110000: loss 1.2502, precision 0.2605, recall 0.4516
+[06/27/2021 23:01:28 INFO] Iter 115000: loss 1.9444, precision 0.2770, recall 0.4595
+[06/27/2021 23:17:37 INFO] Iter 120000: loss 1.4814, precision 0.2647, recall 0.4579
+[06/27/2021 23:33:47 INFO] Iter 125000: loss 1.8420, precision 0.2899, recall 0.4655
+[06/27/2021 23:49:57 INFO] Iter 130000: loss 1.7798, precision 0.2621, recall 0.4674
+[06/28/2021 00:06:07 INFO] Iter 135000: loss 1.5154, precision 0.2697, recall 0.4573
+[06/28/2021 00:22:16 INFO] Iter 140000: loss 1.5337, precision 0.2572, recall 0.4618
+[06/28/2021 00:38:26 INFO] Iter 145000: loss 2.4728, precision 0.2783, recall 0.4651
+[06/28/2021 00:54:36 INFO] Iter 150000: loss 1.6580, precision 0.2611, recall 0.4613
+[06/28/2021 01:10:46 INFO] Iter 155000: loss 2.0956, precision 0.2692, recall 0.4630
+[06/28/2021 01:26:56 INFO] Iter 160000: loss 2.1183, precision 0.2787, recall 0.4734
+[06/28/2021 01:43:06 INFO] Iter 165000: loss 1.7163, precision 0.2922, recall 0.4727
+[06/28/2021 01:59:16 INFO] Iter 170000: loss 1.6163, precision 0.2818, recall 0.4719
+[06/28/2021 02:15:25 INFO] Iter 175000: loss 2.3547, precision 0.2773, recall 0.4695
+[06/28/2021 02:31:35 INFO] Iter 180000: loss 2.5102, precision 0.2880, recall 0.4759
+[06/28/2021 02:47:45 INFO] Iter 185000: loss 1.8242, precision 0.2812, recall 0.4734
+[06/28/2021 03:03:54 INFO] Iter 190000: loss 2.2735, precision 0.2755, recall 0.4735
+[06/28/2021 03:20:05 INFO] Iter 195000: loss 1.8620, precision 0.2695, recall 0.4834
+[06/28/2021 03:36:14 INFO] Iter 200000: loss 1.9534, precision 0.2854, recall 0.4788
+[06/28/2021 03:52:24 INFO] Iter 205000: loss 1.7999, precision 0.2703, recall 0.4758
+[06/28/2021 04:08:34 INFO] Iter 210000: loss 1.4591, precision 0.2812, recall 0.4767
+[06/28/2021 04:24:44 INFO] Iter 215000: loss 1.8103, precision 0.2747, recall 0.4757
+[06/28/2021 04:40:53 INFO] Iter 220000: loss 1.9742, precision 0.2912, recall 0.4808
+[06/28/2021 04:57:03 INFO] Iter 225000: loss 1.7686, precision 0.2838, recall 0.4709
+[06/28/2021 05:13:12 INFO] Iter 230000: loss 2.8595, precision 0.2948, recall 0.4826
+[06/28/2021 05:29:22 INFO] Iter 235000: loss 2.1010, precision 0.2751, recall 0.4847
+[06/28/2021 05:45:32 INFO] Iter 240000: loss 1.8027, precision 0.2830, recall 0.4809
+[06/28/2021 06:01:41 INFO] Iter 245000: loss 2.3630, precision 0.2765, recall 0.4833
+[06/28/2021 06:17:50 INFO] Iter 250000: loss 2.0110, precision 0.3030, recall 0.4833
+[06/28/2021 06:34:00 INFO] Iter 255000: loss 1.8747, precision 0.2907, recall 0.4823
+[06/28/2021 06:50:09 INFO] Iter 260000: loss 1.9486, precision 0.3036, recall 0.4874
+[06/28/2021 07:06:19 INFO] Iter 265000: loss 2.7002, precision 0.2724, recall 0.4787
+[06/28/2021 07:22:29 INFO] Iter 270000: loss 1.9473, precision 0.2890, recall 0.4834
+[06/28/2021 07:38:38 INFO] Iter 275000: loss 1.9082, precision 0.2865, recall 0.4843
+[06/28/2021 07:54:48 INFO] Iter 280000: loss 1.5007, precision 0.2760, recall 0.4856
+[06/28/2021 08:10:58 INFO] Iter 285000: loss 2.0617, precision 0.2842, recall 0.4849
+[06/28/2021 08:27:08 INFO] Iter 290000: loss 1.5464, precision 0.2953, recall 0.4834
+[06/28/2021 08:43:17 INFO] Iter 295000: loss 1.0538, precision 0.2941, recall 0.4871
+[06/28/2021 08:59:27 INFO] Iter 300000: loss 1.7917, precision 0.2914, recall 0.4859
+[06/28/2021 09:15:37 INFO] Iter 305000: loss 1.5552, precision 0.2767, recall 0.4841
+[06/28/2021 09:31:47 INFO] Iter 310000: loss 1.9886, precision 0.2935, recall 0.4922
+[06/28/2021 09:47:57 INFO] Iter 315000: loss 1.3844, precision 0.2978, recall 0.4900
+[06/28/2021 10:04:06 INFO] Iter 320000: loss 1.4945, precision 0.2910, recall 0.4874
+[06/28/2021 10:20:16 INFO] Iter 325000: loss 1.7707, precision 0.3046, recall 0.4930
+[06/28/2021 10:36:25 INFO] Iter 330000: loss 1.7477, precision 0.2943, recall 0.4863
+[06/28/2021 10:52:35 INFO] Iter 335000: loss 2.0507, precision 0.2983, recall 0.4909
+[06/28/2021 11:08:44 INFO] Iter 340000: loss 1.3736, precision 0.3012, recall 0.4881
+[06/28/2021 11:24:54 INFO] Iter 345000: loss 1.5179, precision 0.2993, recall 0.4907
+[06/28/2021 11:41:03 INFO] Iter 350000: loss 2.0785, precision 0.2700, recall 0.4854
+[06/28/2021 11:57:13 INFO] Iter 355000: loss 1.7651, precision 0.2771, recall 0.4831
+[06/28/2021 12:13:22 INFO] Iter 360000: loss 1.5972, precision 0.2930, recall 0.4897
+[06/28/2021 12:29:32 INFO] Iter 365000: loss 1.6702, precision 0.2855, recall 0.4921
+[06/28/2021 12:45:41 INFO] Iter 370000: loss 2.0484, precision 0.2903, recall 0.4865
+[06/28/2021 13:01:51 INFO] Iter 375000: loss 1.5681, precision 0.2870, recall 0.4943
+[06/28/2021 13:18:01 INFO] Iter 380000: loss 2.4260, precision 0.2843, recall 0.4968
+[06/28/2021 13:34:11 INFO] Iter 385000: loss 2.0085, precision 0.2804, recall 0.4860
+[06/28/2021 13:50:21 INFO] Iter 390000: loss 1.9210, precision 0.2938, recall 0.4922
+[06/28/2021 14:06:30 INFO] Iter 395000: loss 1.9011, precision 0.2897, recall 0.4879
+[06/28/2021 14:22:40 INFO] Iter 400000: loss 2.0520, precision 0.2932, recall 0.4931
+[06/28/2021 14:38:49 INFO] Iter 405000: loss 1.4984, precision 0.2878, recall 0.4892
+[06/28/2021 14:54:58 INFO] Iter 410000: loss 1.7747, precision 0.2899, recall 0.4924
+[06/28/2021 15:11:08 INFO] Iter 415000: loss 1.5705, precision 0.2832, recall 0.4924
+[06/28/2021 15:27:17 INFO] Iter 420000: loss 1.6586, precision 0.2852, recall 0.4915
+[06/28/2021 15:43:27 INFO] Iter 425000: loss 1.5371, precision 0.2892, recall 0.4907
+[06/28/2021 15:59:36 INFO] Iter 430000: loss 1.8299, precision 0.2821, recall 0.4873
+[06/28/2021 16:15:45 INFO] Iter 435000: loss 1.6354, precision 0.2847, recall 0.4926
+[06/28/2021 16:31:54 INFO] Iter 440000: loss 1.9268, precision 0.2901, recall 0.4971
+[06/28/2021 16:48:04 INFO] Iter 445000: loss 1.9626, precision 0.3061, recall 0.4971
+[06/28/2021 17:04:12 INFO] Iter 450000: loss 1.7131, precision 0.3033, recall 0.5020
+[06/28/2021 17:20:22 INFO] Iter 455000: loss 2.1479, precision 0.2826, recall 0.4949
+[06/28/2021 17:36:31 INFO] Iter 460000: loss 1.5596, precision 0.2924, recall 0.4946
+[06/28/2021 17:52:41 INFO] Iter 465000: loss 1.5089, precision 0.2958, recall 0.4945
+[06/28/2021 18:08:51 INFO] Iter 470000: loss 2.4006, precision 0.2915, recall 0.5022
+[06/28/2021 18:25:00 INFO] Iter 475000: loss 1.9559, precision 0.2938, recall 0.4945
+[06/28/2021 18:41:10 INFO] Iter 480000: loss 1.7864, precision 0.2961, recall 0.4934
+[06/28/2021 18:57:19 INFO] Iter 485000: loss 1.7286, precision 0.2950, recall 0.4969
+[06/28/2021 19:13:28 INFO] Iter 490000: loss 1.4216, precision 0.3058, recall 0.4896
+[06/28/2021 19:29:37 INFO] Iter 495000: loss 1.7729, precision 0.2914, recall 0.4974
+[06/28/2021 19:45:47 INFO] Iter 500000: loss 1.7264, precision 0.2860, recall 0.4908
+[06/28/2021 20:01:56 INFO] Iter 505000: loss 1.8340, precision 0.2930, recall 0.5002
+[06/28/2021 20:18:05 INFO] Iter 510000: loss 1.4308, precision 0.3046, recall 0.5005
+[06/28/2021 20:34:15 INFO] Iter 515000: loss 1.9394, precision 0.3072, recall 0.4929
+[06/28/2021 20:50:24 INFO] Iter 520000: loss 2.5548, precision 0.3020, recall 0.5007
+[06/28/2021 21:06:34 INFO] Iter 525000: loss 2.0295, precision 0.3042, recall 0.4954
+[06/28/2021 21:22:43 INFO] Iter 530000: loss 2.1741, precision 0.3067, recall 0.4987
+[06/28/2021 21:38:53 INFO] Iter 535000: loss 1.4313, precision 0.3050, recall 0.5049
+[06/28/2021 21:55:02 INFO] Iter 540000: loss 1.5736, precision 0.2914, recall 0.5001
+[06/28/2021 22:11:11 INFO] Iter 545000: loss 1.5740, precision 0.3143, recall 0.5049
+[06/28/2021 22:27:20 INFO] Iter 550000: loss 1.8092, precision 0.3093, recall 0.5002
+[06/28/2021 22:43:30 INFO] Iter 555000: loss 1.0835, precision 0.2790, recall 0.4969
+[06/28/2021 22:59:39 INFO] Iter 560000: loss 1.9133, precision 0.2869, recall 0.4987
+[06/28/2021 23:15:49 INFO] Iter 565000: loss 2.0714, precision 0.2928, recall 0.4914
+[06/28/2021 23:31:58 INFO] Iter 570000: loss 1.4990, precision 0.2985, recall 0.5006
+[06/28/2021 23:48:07 INFO] Iter 575000: loss 1.9152, precision 0.2970, recall 0.5019
+[06/29/2021 00:04:17 INFO] Iter 580000: loss 2.3371, precision 0.2897, recall 0.4951
+[06/29/2021 00:20:26 INFO] Iter 585000: loss 2.1581, precision 0.3060, recall 0.5023
+[06/29/2021 00:36:36 INFO] Iter 590000: loss 1.5419, precision 0.3062, recall 0.5003
+[06/29/2021 00:52:45 INFO] Iter 595000: loss 1.3219, precision 0.3037, recall 0.4979
+[06/29/2021 01:08:52 INFO] Training finished
+[06/29/2021 01:08:53 INFO] Saving checkpoint for iteration #600000
+[06/29/2021 01:08:55 WARNING] From experiment.py:81: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
